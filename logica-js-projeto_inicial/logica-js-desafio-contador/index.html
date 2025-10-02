@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Contadores com While</title>
+</head>
+<body>
+  <h1>Contadores com While</h1>
+
+  <button onclick="contarAte10()">Contar de 1 até 10</button>
+  <button onclick="contarRegressivo()">Contar de 10 até 0</button>
+  <button onclick="contagemRegressiva()">Contagem regressiva personalizada</button>
+  <button onclick="contagemProgressiva()">Contagem progressiva personalizada</button>
+
+  <div id="resultado" style="margin-top: 20px; font-family: monospace;"></div>
+
+  <script>
+    function contarAte10() {
+      let contador = 1;
+      let texto = '';
+      while (contador <= 10) {
+        texto += contador + '<br>';
+        contador++;
+      }
+      document.getElementById('resultado').innerHTML = texto;
+    }
+
+    function contarRegressivo() {
+      let contador = 10;
+      let texto = '';
+      while (contador >= 0) {
+        texto += contador + '<br>';
+        contador--;
+      }
+      document.getElementById('resultado').innerHTML = texto;
+    }
+
+    function contagemRegressiva() {
+  let numero = parseInt(prompt("Digite um número para contagem regressiva:"));
+  let texto = '';
+  while (numero >= 0) {
+    texto += numero + '<br>';
+    numero--;
+  }
+  document.getElementById('resultado').innerHTML = texto;
+}
+
+    function contagemProgressiva() {
+  let numero = parseInt(prompt("Digite um número para contagem progressiva:"));
+  let contador = 0;
+  let texto = '';
+  while (contador <= numero) {
+    texto += contador + '<br>';
+    contador++;
+  }
+  document.getElementById('resultado').innerHTML = texto;
+}
+  </script>
+</body>
+</html>
