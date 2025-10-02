@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Desafios Finais - JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px;
+      font-size: 14px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-family: monospace;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <h1>Desafios Finais - JavaScript</h1>
+
+  <button onclick="boasVindas()">Boas-vindas</button>
+  <button onclick="saudacaoConsole()">Saudação no console</button>
+  <button onclick="saudacaoAlert()">Saudação com alert</button>
+  <button onclick="linguagemFavorita()">Linguagem favorita</button>
+  <button onclick="somaValores()">Soma de valores</button>
+  <button onclick="subtraiValores()">Subtração de valores</button>
+  <button onclick="verificaIdade()">Verificar idade</button>
+  <button onclick="verificaNumero()">Verificar número</button>
+  <button onclick="loopWhile()">Contar de 1 a 10</button>
+  <button onclick="verificaNota()">Verificar nota</button>
+  <button onclick="numeroAleatorio()">Número aleatório decimal</button>
+  <button onclick="aleatorio1a10()">Número entre 1 e 10</button>
+  <button onclick="aleatorio1a1000()">Número entre 1 e 1000</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function boasVindas() {
+      console.log("Bem-vinda ao mundo da programação!");
+      document.getElementById("resultado").innerText = "Bem-vinda ao mundo da programação!";
+    }
+
+    function saudacaoConsole() {
+      let nome = "Fabricia";
+      console.log("Olá, " + nome + "!");
+      document.getElementById("resultado").innerText = "Olá, " + nome + "!";
+    }
+
+    function saudacaoAlert() {
+      let nome = "Fabricia";
+      alert("Olá, " + nome + "!");
+    }
+
+    function linguagemFavorita() {
+      let linguagem = prompt("Qual a linguagem de programação que você mais gosta?");
+      console.log("Você gosta de: " + linguagem);
+      document.getElementById("resultado").innerText = "Você gosta de: " + linguagem;
+    }
+
+    function somaValores() {
+      let valor1 = 10;
+      let valor2 = 5;
+      let resultado = valor1 + valor2;
+      console.log("A soma de " + valor1 + " e " + valor2 + " é igual a " + resultado + ".");
+      document.getElementById("resultado").innerText = "A soma de " + valor1 + " e " + valor2 + " é igual a " + resultado + ".";
+    }
+
+    function subtraiValores() {
+      let valor1 = 10;
+      let valor2 = 5;
+      let resultado = valor1 - valor2;
+      console.log("A diferença entre " + valor1 + " e " + valor2 + " é igual a " + resultado + ".");
+      document.getElementById("resultado").innerText = "A diferença entre " + valor1 + " e " + valor2 + " é igual a " + resultado + ".";
+    }
+
+    function verificaIdade() {
+      let idade = parseInt(prompt("Digite sua idade:"));
+      let mensagem = idade >= 18 ? "Você é maior de idade." : "Você é menor de idade.";
+      console.log(mensagem);
+      document.getElementById("resultado").innerText = mensagem;
+    }
+
+    function verificaNumero() {
+      let numero = parseInt(prompt("Digite um número:"));
+      let mensagem = "";
+      if (numero > 0) {
+        mensagem = "O número é positivo.";
+      } else if (numero < 0) {
+        mensagem = "O número é negativo.";
+      } else {
+        mensagem = "O número é zero.";
+      }
+      console.log(mensagem);
+      document.getElementById("resultado").innerText = mensagem;
+    }
+
+    function loopWhile() {
+      let contador = 1;
+      let texto = "";
+      while (contador <= 10) {
+        texto += contador + "\n";
+        contador++;
+      }
+      console.log(texto);
+      document.getElementById("resultado").innerText = texto;
+    }
+
+    function verificaNota() {
+      let nota = parseFloat(prompt("Digite sua nota:"));
+      let mensagem = nota >= 7 ? "Aprovado" : "Reprovado";
+      console.log(mensagem);
+      document.getElementById("resultado").innerText = mensagem;
+    }
+
+    function numeroAleatorio() {
+      let aleatorio = Math.random();
+      console.log("Número aleatório: " + aleatorio);
+      document.getElementById("resultado").innerText = "Número aleatório: " + aleatorio;
+    }
+
+    function aleatorio1a10() {
+      let aleatorio = parseInt(Math.random() * 10) + 1;
+      console.log("Número entre 1 e 10: " + aleatorio);
+      document.getElementById("resultado").innerText = "Número entre 1 e 10: " + aleatorio;
+    }
+
+    function aleatorio1a1000() {
+      let aleatorio = parseInt(Math.random() * 1000) + 1;
+      console.log("Número entre 1 e 1000: " + aleatorio);
+      document.getElementById("resultado").innerText = "Número entre 1 e 1000: " + aleatorio;
+    }
+  </script>
+</body>
+</html>
