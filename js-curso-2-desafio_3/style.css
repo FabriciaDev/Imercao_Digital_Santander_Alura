@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+section {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px #ccc;
+}
+
+input {
+  margin: 5px;
+  padding: 8px;
+  width: 150px;
+}
+
+button {
+  padding: 8px 12px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+p, pre {
+  margin-top: 10px;
+  font-weight: bold;
+}
