@@ -41,6 +41,52 @@
 > `diff logs-original.log logs-processado.log`
 
 ---
+## 📚 Para Saber Mais: Principais Usos do Comando `diff` no Linux
+
+O comando `diff` é utilizado para comparar o conteúdo de arquivos ou diretórios, identificando as diferenças entre eles. É especialmente útil para desenvolvedores e administradores que precisam revisar mudanças entre versões ou detectar alterações em diretórios.
+
+### 📁 Comparação de Arquivos
+```bash
+diff arquivo1 arquivo2
+```
+Compara dois arquivos e mostra apenas as linhas diferentes. Usa `<` e `>` para indicar de qual arquivo vem cada linha.
+
+### 📂 Comparação Recursiva de Diretórios
+```bash
+diff -r dir1 dir2
+```
+Compara todos os arquivos dentro de dois diretórios, útil para verificar mudanças em projetos inteiros.
+
+### 🧩 Gerar Patch com Diferenças
+```bash
+diff -u arquivo1 arquivo2 > patch.diff
+```
+Cria um arquivo de diferenças no formato unificado, ideal para aplicar com o comando `patch`.
+
+### 👀 Comparação Lado a Lado
+```bash
+diff -y arquivo1 arquivo2
+```
+Mostra as diferenças visualmente, com os arquivos lado a lado.
+
+### 🧼 Ignorar Diferenças Específicas
+```bash
+diff -i arquivo1 arquivo2   # ignora maiúsculas/minúsculas
+diff -w arquivo1 arquivo2   # ignora espaços em branco
+diff -B arquivo1 arquivo2   # ignora linhas em branco
+```
+
+### 📄 Forçar Comparação como Texto
+```bash
+diff --text arquivo1 arquivo2
+```
+Trata arquivos binários como texto, útil para arquivos mistos.
+
+💡 **Exemplo prático**:
+```bash
+diff -u config1.conf config2.conf
+```
+Mostra claramente as linhas adicionadas, removidas ou modificadas — essencial para diagnosticar alterações importantes em arquivos de configuração.
 
 ## 📁 Redirecionamento de saída
 
