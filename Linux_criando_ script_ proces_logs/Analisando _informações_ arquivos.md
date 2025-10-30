@@ -1,4 +1,4 @@
-# Aula 04 - Analisando informações de arquivos
+# Analisando informações de arquivos
 
 ## 📊 Comando `wc` – Contagem de conteúdo
 
@@ -26,6 +26,26 @@
 ## 🔍 Comando `grep` – Filtragem de conteúdo
 
 - `grep "ERROR" nome_do_arquivo.log` → Filtra linhas que contenham a palavra **ERROR**.
+
+## 🛠️ Comando `sed` – Substituição de texto em arquivos
+
+O comando `sed` é usado para buscar e substituir trechos de texto em arquivos. Ele é muito útil para automatizar alterações em scripts, especialmente quando lidamos com arquivos de log.
+
+### ✏️ Exemplo básico de substituição
+
+bash
+
+sed -i 's/antigo/novo/' arquivo.txt
+
+### 🔍 Explicando o comando:
+
+'s/antigo/novo/' → padrão de substituição.
+
+${ARQUIVO_DIR} → variável com o caminho do diretório.
+
+$(date +%F) → insere a data atual no formato YYYY-MM-DD.
+
+\/ → contrabarra usada como caractere de escape para que o / seja interpretado corretamente.
 
 ## 🧠 Aprendizados da aula
 
