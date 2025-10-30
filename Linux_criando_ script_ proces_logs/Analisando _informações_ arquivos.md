@@ -53,32 +53,54 @@ ${ARQUIVO_DIR} → variável com o caminho do diretório.
 $(date +%F) → insere a data atual no formato YYYY-MM-DD.
 
 \/ → contrabarra usada como caractere de escape para que o / seja interpretado corretamente.
+## 🧩 Outros comandos importantes da aula
 
-## 🧠 Aprendizados da aula
+### 📥 Redirecionamento de entrada com `<`
 
-- 📏 Contar linhas, palavras e caracteres em arquivos de log:
-  ```bash
-  wc -l nome_do_arquivo.log     # Linhas
-  wc -w nome_do_arquivo.log     # Palavras
-  wc -c nome_do_arquivo.log     # Caracteres
-📎 Unir arquivos com cat:
+Permite enviar o conteúdo de um arquivo como entrada para um comando, sem precisar usar `cat`.
 
-bash
-cat arquivo1.log arquivo2.log > todos_os_logs.log
-🕒 Trabalhar com datas usando date:
+wc -l < arquivo.log
 
-bash
-date +"%Y-%m-%d %H:%M:%S"     # Data e hora atual
-date -d "yesterday"           # Data de ontem
-date -d "+1 day"              # Amanhã
-date -u +"%Y-%m-%d %H:%M:%S UTC"  # Data e hora em UTC
-🔍 Filtrar informações específicas com grep:
+### 🔎 Isso conta as linhas do arquivo arquivo.log usando redirecionamento de entrada.
 
-bash
-grep "ERROR" nome_do_arquivo.log
-🔗 Combinar comandos com pipes (|) para análises avançadas:
+### 🧪 Captura de saída com $(comando)
+Usado para armazenar o resultado de um comando em uma variável.
 
-bash
-cat todos_os_logs.log | grep "ERROR" | wc -l
-💡 Dica extra
-Você pode usar esses comandos em scripts .sh para automatizar tarefas de análise de logs e manutenção de sistemas.
+DATA=$(date +"%Y-%m-%d")
+echo "Análise feita em $DATA"
+
+📌 Aqui, a variável DATA recebe a data atual, e o echo imprime uma frase com essa data.
+
+### 🧾 Extração de nome de arquivo com basename
+Remove o caminho e retorna apenas o nome do arquivo.
+
+nome=$(basename /caminho/para/arquivo.log)
+echo "Nome do arquivo: $nome"
+
+📌 Isso é útil para organizar arquivos ou gerar relatórios com nomes limpos.
+
+### 📂 Criação de diretórios com mkdir -p
+Cria diretórios, inclusive múltiplos níveis, sem erro se já existirem.
+
+mkdir -p logs/$(date +%F)
+
+📌 Cria uma pasta logs/AAAA-MM-DD com a data atual, ideal para salvar logs organizados por dia.
+
+### 🔀 Estruturas condicionais: if, elif, else
+Permitem executar comandos diferentes dependendo de uma condição.
+
+if [ -f "arquivo.log" ]; then
+
+  echo "Arquivo encontrado"
+  
+elif [ -d "logs" ]; then
+
+  echo "Diretório existe"
+else
+
+  echo "Arquivo ou diretório não encontrado"
+  
+fi
+
+📌 Esse bloco verifica se o arquivo existe, se o diretório existe, ou exibe uma mensagem de erro.
+
