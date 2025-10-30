@@ -43,15 +43,6 @@ Esse comando substitui a palavra antigo por novo no arquivo arquivo.txt. A opç�
 Na aula, usamos sed para substituir o nome do arquivo log_stats.txt por um nome dinâmico com data, salvando no diretório correto:
 
 sed -i 's/log_stats.txt/"${ARQUIVO_DIR}\/log_stats_$(date +%F).txt"/' monitoramento-logs.sh
-### 🔍 Explicando o comando:
-
-'s/antigo/novo/' → padrão de substituição.
-
-${ARQUIVO_DIR} → variável com o caminho do diretório.
-
-$(date +%F) → insere a data atual no formato YYYY-MM-DD.
-
-\/ → contrabarra usada como caractere de escape para que o / seja interpretado corretamente.
 
 ### 🔍 Explicando o comando:
 
