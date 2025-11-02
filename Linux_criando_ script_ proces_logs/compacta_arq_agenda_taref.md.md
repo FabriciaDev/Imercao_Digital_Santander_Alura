@@ -103,19 +103,16 @@ crontab -e
 📌 Abre o editor para configurar tarefas agendadas.
 ### 🧭 Estrutura da sintaxe do cron
 
+```bash
 * * * * * comando
-          
 │ │ │ │ │
-
 │ │ │ │ └─ dia da semana (0–7)
-
 │ │ │ └─── mês (1–12)
-
 │ │ └───── dia do mês (1–31)
-
 │ └─────── hora (0–23)
-
 └───────── minuto (0–59)
+
+```
 
 📌 Cada campo define quando o comando será executado.
 
