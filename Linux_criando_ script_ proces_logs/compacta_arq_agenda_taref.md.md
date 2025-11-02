@@ -104,32 +104,37 @@ crontab -e
 ### 🧭 Estrutura da sintaxe do cron
 
 * * * * * comando
+          
 │ │ │ │ │
+
 │ │ │ │ └─ dia da semana (0–7)
+
 │ │ │ └─── mês (1–12)
+
 │ │ └───── dia do mês (1–31)
+
 │ └─────── hora (0–23)
+
 └───────── minuto (0–59)
 
 📌 Cada campo define quando o comando será executado.
 
-⏳ Exemplo prático
-bash
+#### ⏳ Exemplo prático
+
 0 8 * * * /caminho/para/monitoramento-logs.sh
+
 📌 Executa o script todos os dias às 8h da manhã.
 
-📋 Listar tarefas agendadas
-bash
+### 📋 Listar tarefas agendadas
+
 crontab -l
+
 📌 Mostra todas as tarefas agendadas para o usuário atual.
 
-❌ Remover todas as tarefas agendadas
-bash
+### ❌ Remover todas as tarefas agendadas
+
 crontab -r
+
 📌 Remove todas as tarefas do cron para o usuário atual.
 
-Esses comandos completam o ciclo de compactação, descompactação e automação com cron, tornando o gerenciamento de logs muito mais eficiente!
 
-Código
-
-Se quiser, posso revisar o arquivo completo com você ou te ajudar a montar o próximo `.md`. Só dizer!
