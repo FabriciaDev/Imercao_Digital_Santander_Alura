@@ -134,4 +134,64 @@ crontab -r
 
 📌 Remove todas as tarefas do cron para o usuário atual.
 
+### 🕒 Agendamento único com o comando `at`
 
+Nem toda tarefa precisa ser executada regularmente. Para agendar uma execução única, usamos o comando `at`.
+
+### 🔧 Verificando o serviço `atd`
+
+O `at` depende do serviço `atd`. Verifique se ele está ativo:
+
+systemctl status atd
+
+Se não estiver ativo, inicie com:
+
+bash
+sudo systemctl start atd
+Se aparecer o erro Unit atd.service could not be found., instale o at:
+
+bash
+sudo apt update
+sudo apt install at
+Depois de instalar, habilite e inicie o serviço:
+
+bash
+sudo systemctl enable atd
+sudo systemctl start atd
+Verifique novamente o status:
+
+bash
+systemctl status atd
+
+### 📅 Agendando uma execução única
+Para agendar seu script para rodar daqui a 3 minutos:
+
+echo "/caminho/para/seu/script/monitoramento-logs.sh" | at now + 3 minutes
+
+📌 Substitua /caminho/para/seu/script/ pelo caminho real do seu script.
+
+### 📋 Verificar tarefas agendadas
+Use o comando abaixo para listar as tarefas agendadas com at:
+
+atq
+
+### ✅ Verificar se o script foi executado
+
+Após o tempo agendado, verifique se houve modificações nos arquivos da pasta:
+
+myapp/logs-processados
+
+### 💡 Vantagens do at
+* Ideal para tarefas que precisam ser executadas uma única vez.
+
+* Permite agendar comandos para horários exatos, como:
+
+“daqui a 5 minutos”
+
+“amanhã às 14:00”
+
+* Simples e direto, sem necessidade de editar arquivos de configuração.
+
+* Ótimo para scripts de manutenção, backups ou relatórios pontuais.
+
+* Ajuda a organizar tarefas e recursos do sistema com eficiência.
