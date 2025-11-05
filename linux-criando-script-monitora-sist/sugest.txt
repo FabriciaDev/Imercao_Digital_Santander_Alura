@@ -1,0 +1,4 @@
+Curso de
+Expressões Regulares: faça buscas, validações e substituições de textos
+
+https://cursos.alura.com.br/course/expressoes-regulares-buscas-validacoes-substituicoes-textos
