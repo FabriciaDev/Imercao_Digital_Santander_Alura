@@ -21,6 +21,7 @@ tail -f /var/log/syslog
 ````
 ## 🧰 Principais opções do comando tails
 | Opção 	| Descrição                                                                                     |
+|---------------------------------------------------------------------------------------------------------|
 |-f	      |Exibe novas linhas adicionadas ao arquivo em tempo real (seguimento contínuo). Ideal para logs.|
 |-n       |NUM	Mostra as últimas NUM linhas do arquivo. Ex: tail -n 20 arquivo.log                       |
 
