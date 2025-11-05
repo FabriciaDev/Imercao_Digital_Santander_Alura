@@ -20,19 +20,15 @@ também dá para ver as informações do arquivo de log em tempo real com o coma
 tail -f /var/log/syslog
 ````
 ## 🧰 Principais opções do comando tails
-| Opção 	| Descrição                                                                                     |
-|---------------------------------------------------------------------------------------------------------|
-|-f	      |Exibe novas linhas adicionadas ao arquivo em tempo real (seguimento contínuo). Ideal para logs.|
-|-n       |NUM	Mostra as últimas NUM linhas do arquivo. Ex: tail -n 20 arquivo.log                       |
-
--c        NUM	Mostra os últimos NUM bytes do arquivo. Ex: tail -c 100 arquivo.log
-
--q	      Suprime o cabeçalho com o nome do arquivo quando múltiplos arquivos são usados.
--v	      Sempre mostra o cabeçalho com o nome do arquivo, mesmo se houver apenas um.
-
---pid=PID	Combinado com -f, encerra o tail quando o processo com o PID especificado termina.
-
---retry	  Tenta reabrir o arquivo se ele estiver temporariamente indisponível.
+| Opção     | Descrição                                                                                     |
+|-----------|-----------------------------------------------------------------------------------------------|
+| -f        | Exibe novas linhas adicionadas ao arquivo em tempo real (seguimento contínuo). Ideal para logs. |
+| -n NUM    | Mostra as últimas NUM linhas do arquivo. Ex: `tail -n 20 arquivo.log`                         |
+| -c NUM    | Mostra os últimos NUM bytes do arquivo. Ex: `tail -c 100 arquivo.log`                         |
+| -q        | Suprime o cabeçalho com o nome do arquivo quando múltiplos arquivos são usados.              |
+| -v        | Sempre mostra o cabeçalho com o nome do arquivo, mesmo se houver apenas um.                  |
+| --pid=PID | Combinado com -f, encerra o tail quando o processo com o PID especificado termina.           |
+| --retry   | Tenta reabrir o arquivo se ele estiver temporariamente indisponível.                         |
 
 ### 💡 Exemplos práticos
 #### Monitorar log em tempo real:
