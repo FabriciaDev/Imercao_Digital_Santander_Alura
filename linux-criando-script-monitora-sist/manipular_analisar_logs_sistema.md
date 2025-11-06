@@ -33,17 +33,40 @@ tail -f /var/log/syslog
 
 ### 💡 Exemplos práticos
 #### Monitorar log em tempo real:
-
+````
 tail -f /var/log/syslog
-
+````
 #### Ver as últimas 50 linhas de um arquivo:
-
+````
 tail -n 50 arquivo.log
-
+````
 #### Ver os últimos 200 bytes de um arquivo:
-
+````
 tail -c 200 arquivo.log
+````
 Monitorar log até que um processo termine:
-
-bash
+````
 tail -f /var/log/syslog --pid=1234
+````
+## 🧠 Expressões Regulares com grep
+###Componentes básicos
+Retomando um pouco do que abordamos em vídeo, uma regex possui dois componentes básicos. Vamos conferir!
+
+* Caracteres literais: correspondem exatamente aos caracteres no texto. Exemplo: abc corresponde à string "abc" no texto.
+* Metacaracteres: caracteres especiais que possuem significados específicos.
+
+###🔣 Tabela de Metacaracteres Comuns em Regex
+| Símbolo   | Significado                                 | Exemplo                   |
+|-----------|---------------------------------------------|---------------------------|
+| `.`       | Qualquer caractere (exceto quebra de linha) | `a.b` → "aab", "acb"      |
+| `*`       | Zero ou mais repetições                     | `a*` → "", "a", "aa"      |
+| `+`       | Uma ou mais repetições                      | `a+` → "a", "aa"          |
+| `?`       | Zero ou uma repetição                       | `a?` → "", "a"            |
+| `{n,m}`   | Entre n e m repetições                      | `a{2,4}` → "aa", "aaa"    |
+| `^`       | Início da linha                             | `^abc` → só se começar com "abc" |
+| `$`       | Fim da linha                                | `abc$` → só se terminar com "abc" |
+| `[]`      | Conjunto de caracteres                      | `[aeiou]` → qualquer vogal |
+| `[^]`     | Negação do conjunto                         | `[^a-z]` → não-letra minúscula |
+| `()`      | Agrupamento                                 | `(abc)+` → "abcabc"       |
+| `|`       | Alternativa (ou)                            | `gato|cachorro` → "gato" ou "cachorro" |
+
