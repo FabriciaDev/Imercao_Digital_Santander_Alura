@@ -108,5 +108,9 @@ Regex (expressão regular) é uma sequência de símbolos usada para identificar
 | `perl`     | Regex avançada e flexível   | `perl -nle 'print $& if m{https?://[^\s]+}' /var/log/syslog` |
 | `rg`       | Busca rápida com regex      | `rg -o 'https?://[^\s]+' /var/log/syslog`               |
 
-
-
+#### Regex101, que oferece um editor interativo com explicações detalhadas de cada parte da regex;
+https://regex101.com/
+#### RegExr, que permite testar e salvar expressões regulares enquanto exibe dicas e exemplos;
+https://regexr.com/
+#### RegexPal, ideal para testar padrões simples rapidamente.
+https://www.regexpal.com/
