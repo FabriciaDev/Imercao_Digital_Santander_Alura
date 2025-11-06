@@ -45,3 +45,37 @@ ping 8.8.8.8
 | 🔐 Ignorar erros de certificado SSL             | `curl -k https://site.com`                                   | Ignora erros de certificado (útil em ambientes de teste)                 |
 | 🔐 Usar certificado para autenticação           | `curl --cert certificado.pem https://site.com`               | Autentica usando um certificado SSL                                      |
 | 🌐 Usar proxy para conexão                      | `curl -x http://proxy.exemplo.com:8080 https://site.com`     | Define um proxy para a requisição                                        |
+
+## 🧩 Script de monitoramento
+````
+#!/bin/bash
+
+LOG_DIR="monitoramento_sistema"
+mkdir -p $LOG_DIR
+
+function monitorar_logs() {
+        grep -E "fail(ed)?|error|denied|unauthorized" /var/log/syslog | awk '{print $1, $2, $3, $5, $6, $7}' > $LOG_DIR/monitoramento_logs_sistema.txt
+        grep -E "fail(ed)?|error|denied|unauthorized" /var/log/auth.log | awk '{print $1, $2, $3, $5, $6, $7}' > $LOG_DIR/monitoramento_logs_auth.txt
+}
+
+function monitorar_rede() {
+        if ping -c 1 8.8.8.8 > /dev/null; then
+                echo "$(date): Conectividade ativa." >> $LOG_DIR/monitoramento_rede.txt
+        else
+                echo "$(date): Sem conexao com a internet." >> $LOG_DIR/monitoramento_rede.txt
+        fi
+
+        if curl -s --head https://www.alura.com.br/ | grep "HTTP/2 200" > /dev/null; then
+                echo "$(date): Conexao com a Alura bem-sucedida." >> $LOG_DIR/monitoramento_rede.txt
+        else
+                echo "$(date): Falha ao conectar com a Alura." >> $LOG_DIR/monitoramento_rede.txt
+        fi
+}
+
+function executar_monitoramento() {
+        monitorar_logs
+        monitorar_rede
+}
+
+executar_monitoramento
+````
