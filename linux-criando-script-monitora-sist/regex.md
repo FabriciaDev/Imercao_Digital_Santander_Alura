@@ -67,7 +67,6 @@ Regex (expressão regular) é uma sequência de símbolos usada para identificar
 
 
 ### Componentes básicos
-Retomando um pouco do que abordamos em vídeo, uma regex possui dois componentes básicos. Vamos conferir!
 
 * Caracteres literais: correspondem exatamente aos caracteres no texto. Exemplo: abc corresponde à string "abc" no texto.
 * Metacaracteres: caracteres especiais que possuem significados específicos.
