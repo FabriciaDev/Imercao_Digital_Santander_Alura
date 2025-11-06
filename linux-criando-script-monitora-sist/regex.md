@@ -51,6 +51,7 @@ tail -f /var/log/syslog --pid=1234
 ## 🧠 Expressões Regulares com grep
 
 Regex (expressão regular) é uma sequência de símbolos usada para identificar padrões específicos em textos, como erros, datas ou acessos não autorizados em arquivos de log; ela permite filtrar rapidamente informações relevantes usando comandos como grep, tornando a análise de grandes volumes de dados mais eficiente e precisa.
+### 📄 Tabela de opções do comando grep
 
 | Opção     | Descrição                                                                 |
 |-----------|---------------------------------------------------------------------------|
