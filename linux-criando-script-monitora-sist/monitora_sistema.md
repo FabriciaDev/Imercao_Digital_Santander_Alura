@@ -164,3 +164,14 @@ Resultado: mostra quantas linhas com problemas foram encontradas.
 awk '/fail|error|denied|unauthorized/' /var/log/syslog > logs_filtrados.txt
 ````
 Resultado: cria um arquivo com os logs relevantes para investigação.
+
+## 🧩 Script de monitoramento
+Esse script cria uma pasta chamada monitoramento-sistema, filtra do arquivo syslog apenas os logs com erros e acessos negados usando grep, formata a saída com awk para mostrar data, hora e serviço, e salva tudo no arquivo monitoramento_logs_sistema.txt.
+````
+#!/bin/bash
+
+LOG_DIR="monitoramento-sistema"
+mkdir -p $LOG_DIR
+
+grep -E "(fail(ed)?|error|denied|unauthorized)" /var/log/syslog | awk '{print $1, $2, $3, $5, $6, $7}' > monitoramento_logs_sistema.txt
+````
