@@ -49,6 +49,23 @@ Monitorar log até que um processo termine:
 tail -f /var/log/syslog --pid=1234
 ````
 ## 🧠 Expressões Regulares com grep
+
+Regex (expressão regular) é uma sequência de símbolos usada para identificar padrões específicos em textos, como erros, datas ou acessos não autorizados em arquivos de log; ela permite filtrar rapidamente informações relevantes usando comandos como grep, tornando a análise de grandes volumes de dados mais eficiente e precisa.
+
+| Opção     | Descrição                                                                 |
+|-----------|---------------------------------------------------------------------------|
+| `-E`      | Usa expressões regulares estendidas (permite `+`, `?`, `|`, etc.)         |
+| `-o`      | Exibe apenas a parte da linha que corresponde à expressão                 |
+| `-i`      | Ignora diferenças entre maiúsculas e minúsculas                           |
+| `-v`      | Inverte o filtro: mostra linhas que **não** correspondem à expressão      |
+| `-r` ou `-R` | Busca recursiva em diretórios                                           |
+| `-n`      | Mostra o número da linha onde houve correspondência                       |
+| `-c`      | Conta quantas linhas correspondem à expressão                             |
+| `-l`      | Lista apenas os nomes dos arquivos que têm correspondência                |
+| `-L`      | Lista arquivos que **não** têm correspondência                            |
+| `--color` | Destaca visualmente os trechos que correspondem à expressão               |
+
+
 ### Componentes básicos
 Retomando um pouco do que abordamos em vídeo, uma regex possui dois componentes básicos. Vamos conferir!
 
