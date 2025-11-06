@@ -70,3 +70,26 @@ Retomando um pouco do que abordamos em vídeo, uma regex possui dois componentes
 | `()`      | Agrupamento                                 | `(abc)+` → "abcabc"       |
 | `|`       | Alternativa (ou)                            | `gato|cachorro` → "gato" ou "cachorro" |
 
+### 🔍 Tabela de Classes de Caracteres
+
+| Classe    | Significado                                 | Exemplo                   |
+|-----------|---------------------------------------------|---------------------------|
+| `\d`      | Dígito (0–9)                                | `\d\d\d\d` → "2025"       |
+| `\w`      | Alfanumérico + sublinhado (`_`)             | `\w+` → "joao_123"        |
+| `\s`      | Espaço em branco                            | `\s` → " " ou tabulação   |
+| `\D`      | Não é dígito                                | `\D` → "a", "-"           |
+| `\W`      | Não é alfanumérico                          | `\W` → "!", "@"           |
+| `\S`      | Não é espaço em branco                      | `\S` → "a", "1"           |
+
+### 🛠️ Tabela de Ferramentas Linux que Aceitam Regex
+
+| Ferramenta | Uso Principal               | Exemplo de Comando                                      |
+|------------|-----------------------------|----------------------------------------------------------|
+| `grep`     | Buscar padrões em arquivos  | `grep -Eo 'https?://[^\s]+' /var/log/syslog`            |
+| `awk`      | Processar texto por campos  | `awk '{for(i=1;i<=NF;i++) if ($i ~ /https?:\/\/[^\s]+/) print $i}' /var/log/syslog` |
+| `sed`      | Substituir ou extrair texto | `sed -nE 's/.*(https?:\/\/[^ ]+).*/\1/p' /var/log/syslog` |
+| `perl`     | Regex avançada e flexível   | `perl -nle 'print $& if m{https?://[^\s]+}' /var/log/syslog` |
+| `rg`       | Busca rápida com regex      | `rg -o 'https?://[^\s]+' /var/log/syslog`               |
+
+
+
