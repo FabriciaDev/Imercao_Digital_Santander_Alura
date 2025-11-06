@@ -114,3 +114,53 @@ https://regex101.com/
 https://regexr.com/
 #### RegexPal, ideal para testar padrões simples rapidamente.
 https://www.regexpal.com/
+
+##🧾Análise de logs com awk
+awk é uma ferramenta de linha de comando usada para processar e analisar textos estruturados, especialmente útil em arquivos de log. Ela permite filtrar linhas, extrair colunas específicas e aplicar condições lógicas com base em padrões, facilitando a identificação de eventos como erros, acessos negados ou falhas no sistema. Com awk, é possível automatizar a leitura de grandes volumes de dados e gerar relatórios precisos com comandos simples e eficientes.
+
+| Comando `awk`                          | O que faz                                                  | Exemplo de uso                                               |
+|---------------------------------------|-------------------------------------------------------------|--------------------------------------------------------------|
+| `awk '{print $0}'`                    | Imprime a linha inteira                                     | Visualizar o conteúdo completo de cada linha do log         |
+| `awk '{print $1, $2, $3}'`            | Imprime as 3 primeiras colunas                              | Mostrar data e hora do log                                   |
+| `awk '/error/'`                       | Filtra linhas que contêm "error"                            | Ver apenas mensagens de erro                                 |
+| `awk '$3 == "sshd"'`                  | Filtra linhas onde a 3ª coluna é "sshd"                     | Ver logs do serviço SSH                                      |
+| `awk '{print NR, $0}'`                | Mostra número da linha junto com o conteúdo                 | Numerar os logs para referência                              |
+| `awk '{count++} END {print count}'`   | Conta o número total de linhas                              | Saber quantas entradas existem no log                        |
+| `awk '{if ($5 == "unauthorized") print $0}'` | Filtra linhas com "unauthorized" na 5ª coluna        | Ver tentativas de acesso não autorizado                      |
+
+
+### 📂 Exemplo de log típico (/var/log/syslog)
+````
+Nov  5 22:14:01 meteora CRON[1234]: (root) CMD (run-parts /etc/cron.daily)
+Nov  5 22:15:02 meteora sshd[5678]: Failed password for invalid user admin from 192.168.0.1 port 22 ssh2
+Nov  5 22:16:03 meteora kernel: [12345.678901] error: unable to allocate memory
+````
+### 🔍 Extraindo colunas específicas
+````
+awk '{print $1, $2, $3, $5}' /var/log/syslog
+````
+Resultado: mostra data, hora, hostname e serviço.
+
+### 🚨 Filtrando mensagens de erro
+````
+awk '/fail|error|denied|unauthorized/' /var/log/syslog
+````
+Resultado: mostra apenas linhas com falhas ou acessos negados.
+
+### 🧠 Combinando filtro e formatação
+````
+awk '/fail|error|denied|unauthorized/ {print $1, $2, $3, $5, $6, $0}' /var/log/syslog
+````
+Resultado: exibe data, hora, serviço, tipo de log e a linha completa para contexto.
+
+### 📊 Contando ocorrências
+````
+awk '/fail|error|denied|unauthorized/ {count++} END {print "Total:", count}' /var/log/syslog
+````
+Resultado: mostra quantas linhas com problemas foram encontradas.
+
+### 📁 Salvando em arquivo
+````
+awk '/fail|error|denied|unauthorized/' /var/log/syslog > logs_filtrados.txt
+````
+Resultado: cria um arquivo com os logs relevantes para investigação.
