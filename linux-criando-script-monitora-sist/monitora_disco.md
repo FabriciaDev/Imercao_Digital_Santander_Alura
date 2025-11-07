@@ -67,3 +67,57 @@ df --output=source,fstype,size,used,avail,pcent,target -h
 Força o uso de uma unidade específica (ex: MB).
 ````
 df -B M
+````
+🖨️ Outro exemplo com formatação:
+bash
+awk '$5+0 > 70 {print $1 " esta com " $5 " de uso."}'
+Se a condição for verdadeira, ele imprime:
+
+$1: nome da partição
+
+$5: porcentagem de uso
+
+Com uma mensagem formatada.
+
+Se quiser, posso te mostrar como usar awk pra extrair outras colunas ou montar relatórios mais completos. Quer explorar mais?
+
+Quer saber vamos colocar os comandos utilizados em uma nova parte chamada usos combvinados de df. Coloque emogi em tudo e organize para ficar bonitinho e combinandinho com o arquivo aí do lado
+Perfeito, Fabricia! Aqui está a nova seção “🧰 Usos Combinados do comando df”, formatada em Markdown (.md), com explicações claras, emojis e estilo combinando com o restante do seu arquivo:
+
+markdown
+## 🧰 Usos Combinados do comando `df`
+
+Nesta seção, reunimos os comandos utilizados na aula para monitorar o uso de disco de forma mais refinada. A ideia é filtrar partições com uso elevado, ignorar sistemas irrelevantes e formatar a saída para facilitar a leitura e o registro em relatórios.
+
+### 🔎 Filtrar partições com uso acima de 70%
+
+```
+df -h | awk '$5+0 > 70'
+````
+Exibe apenas as partições cujo uso de disco ultrapassa 70%.
+
+O +0 remove o símbolo % para permitir a comparação numérica.
+
+### 🚫 Ignorar partições do Snap (snapfuse)
+````
+df -h | grep -v "snapfuse" | awk '$5+0 > 70'
+````
+Remove da análise as partições do Snap, que costumam aparecer com 100% de uso mas não representam risco real.
+### 🖨️ Formatar a saída com mensagem personalizada
+````
+df -h | grep -v "snapfuse" | awk '$5+0 > 70 {print $1 " esta com " $5 " de uso."}'
+````
+Exibe mensagens no formato: /dev/sda1 esta com 85% de uso.
+### 📝 Salvar o resultado em um arquivo de log
+````
+>> $LOG_DIR/monitoramento_disco.txt
+````
+Redireciona a saída formatada para um arquivo de relatório no diretório de logs.
+
+#### 🧩 Função no script
+````
+function monitorar_disco() {
+  df -h | grep -v "snapfuse" | awk '$5+0 > 70 {print $1 " esta com " $5 " de uso."}' >> $LOG_DIR/monitoramento_disco.txt
+````
+Encapsula o monitoramento em uma função reutilizável dentro do script.
+
