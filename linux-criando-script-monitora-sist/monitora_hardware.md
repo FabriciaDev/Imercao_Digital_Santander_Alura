@@ -55,6 +55,19 @@ free -g → mostra os valores em gigabytes.
 
 free -t → adiciona uma linha com o total de memória (RAM + swap).
 
+> ⚠️ **Atenção: Gigabit x Gigabyte**
+>
+> - **Gigabit (Gb):** unidade de medida usada em velocidade de transmissão de dados (ex.: internet).  
+>   1 Gigabit = 1.000.000.000 bits.  
+>   Normalmente aparece em conexões como "100 Mb/s" ou "1 Gb/s".
+>
+> - **Gigabyte (GB):** unidade de medida usada em armazenamento de dados (ex.: HD, SSD, pendrive).  
+>   1 Gigabyte = 1.000.000.000 bytes (decimal) ou 1.073.741.824 bytes (binário, chamado GiB).  
+>   Normalmente aparece em tamanhos de arquivos ou capacidade de discos.
+>
+> 👉 Resumindo: **Gb (bit)** mede velocidade, enquanto **GB (byte)** mede espaço de armazenamento.
+
+
 free -s 5 → atualiza a saída a cada 5 segundos, útil para monitoramento em tempo real.
 
 free --mega → força a exibição em MB, mesmo que o valor seja maior.
