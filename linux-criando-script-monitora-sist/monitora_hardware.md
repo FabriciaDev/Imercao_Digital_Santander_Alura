@@ -1,4 +1,4 @@
-# 🖥️ Aula 4 – Monitorando o Hardware do Sistema
+# 🖥️  Monitorando o Hardware do Sistema
 ## 💾 Verificando o uso de memória RAM com `free`
 
 O comando `free` é utilizado para exibir informações sobre o uso da memória RAM e da área de swap. Ele mostra quanto de memória está sendo usada, quanto está livre e quanto está disponível para novos processos. Essa análise é essencial para identificar gargalos de desempenho relacionados ao consumo de memória.
