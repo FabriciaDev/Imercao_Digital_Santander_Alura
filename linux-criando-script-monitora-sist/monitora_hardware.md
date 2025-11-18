@@ -86,20 +86,23 @@ Exibe em tempo real os processos ativos e o consumo de recursos.
 
 Para sair da tela do top, pressione a tecla Q.
 
-🧾 Saída única em modo batch
-bash
+### 🧾 Saída única em modo batch
+````
 top -bn1
+````
 -b → executa em modo batch (sem interface interativa).
 
 -n1 → gera apenas uma saída única, sem atualização contínua.
 
 Exemplo de saída (trecho da linha da CPU):
 
-Código
+````
 %Cpu(s):  0.0 us,  0.0 sy,  0.0 ni, 100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
-🔎 Filtrar apenas a linha da CPU
-bash
+````
+### 🔎 Filtrar apenas a linha da CPU
+````
 top -bn1 | grep "Cpu(s)"
+````
 Exibe somente a linha com os dados de uso da CPU.
 
 Principais indicadores:
@@ -110,40 +113,28 @@ sy → uso da CPU pelo sistema operacional.
 
 id → tempo em que a CPU ficou ociosa (idle).
 
-🧮 Extrair apenas o valor de ociosidade com sed
-bash
+### 🧮 Extrair apenas o valor de ociosidade com sed
+````
 top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/"
+````
 Captura apenas o valor da porcentagem de ociosidade da CPU.
 
 Exemplo de saída:
 
-Código
+````
 99.0
-📊 Calcular o uso da CPU com awk
-bash
+````
+### 📊 Calcular o uso da CPU com awk
+````
 top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print "Uso da CPU: " 100 - $1 "%"}'
+````
 Subtrai o valor de ociosidade de 100% para obter o uso real da CPU.
 
 Exemplo de saída:
 
-Código
+````
 Uso da CPU: 1.1%
-Esses comandos permitem monitorar a CPU de forma detalhada, filtrando apenas as informações relevantes e formatando a saída para relatórios ou análises rápidas.
-
-Código
-
----
-
-👉 Assim, seguimos o mesmo padrão do `free`, mas agora com foco no **uso da CPU**. Quer que eu já prepare a próxima parte da aula (Análise de desempenho da CPU) no mesmo estilo para manter a sequência?
-
-
-
-
-Editar em uma página
-Tem alguma coisa para colocr na seção de outros casos de uso?
-Sim, Fabricia! Dá pra enriquecer bastante a seção “Outros casos de uso” do comando top. Além do que já vimos na aula (uso básico, modo batch, filtragem com grep, extração com sed e cálculo com awk), o top tem várias opções úteis que podem entrar como variações práticas. Aqui vai uma sugestão para complementar o .md:
-
-markdown
+````
 ## 📂 Outros casos de uso do comando `top`
 
 - `top -n 5` → executa 5 atualizações e depois encerra automaticamente.  
