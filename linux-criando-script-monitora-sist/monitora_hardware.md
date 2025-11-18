@@ -55,6 +55,12 @@ free -g → mostra os valores em gigabytes.
 
 free -t → adiciona uma linha com o total de memória (RAM + swap).
 
+free -s 5 → atualiza a saída a cada 5 segundos, útil para monitoramento em tempo real.
+
+free --mega → força a exibição em MB, mesmo que o valor seja maior.
+
+Essas variações permitem adaptar o comando free a diferentes cenários de análise, seja para relatórios rápidos ou para monitoramento contínuo.
+
 > ⚠️ **Atenção: Gigabit x Gigabyte**
 >
 > - **Gigabit (Gb):** unidade de medida usada em velocidade de transmissão de dados (ex.: internet).  
@@ -68,8 +74,3 @@ free -t → adiciona uma linha com o total de memória (RAM + swap).
 > 👉 Resumindo: **Gb (bit)** mede velocidade, enquanto **GB (byte)** mede espaço de armazenamento.
 
 
-free -s 5 → atualiza a saída a cada 5 segundos, útil para monitoramento em tempo real.
-
-free --mega → força a exibição em MB, mesmo que o valor seja maior.
-
-Essas variações permitem adaptar o comando free a diferentes cenários de análise, seja para relatórios rápidos ou para monitoramento contínuo.
