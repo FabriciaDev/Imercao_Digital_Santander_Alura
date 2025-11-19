@@ -147,3 +147,70 @@ Uso da CPU: 1.1%
 - `top -bn1 | grep firefox` → filtra a saída para visualizar apenas processos relacionados ao Firefox.  
 
 Essas variações permitem adaptar o `top` a diferentes cenários: monitorar usuários específicos, acompanhar apenas um processo, ordenar por consumo de recursos ou limitar a quantidade de informações exibidas.
+
+## 💽 Monitorando atividade de leitura e escrita com `iostat`
+
+O comando `iostat` é utilizado para obter estatísticas de entrada e saída dos dispositivos de armazenamento. Ele mostra informações sobre transações por segundo, dados lidos, escritos e descartados. Esse monitoramento é essencial para identificar gargalos de desempenho relacionados ao disco.
+
+### 📌 Uso básico do comando
+
+````
+iostat
+
+````
+Exibe informações sobre:
+
+CPU → porcentagens de uso já vistas em outros comandos.
+
+Device → lista de dispositivos de armazenamento (ex.: sda, sdb, sdc).
+
+tps → transações por segundo.
+
+kB_read/s → dados lidos por segundo.
+
+kB_wrtn/s → dados escritos por segundo.
+
+kB_dscd/s → dados descartados por segundo.
+
+### 🔎 Filtrar apenas dispositivos de armazenamento
+````
+iostat | grep -E "Device|^sda|^sdb|^sdc"
+````
+Exibe apenas as linhas relevantes da saída, ignorando cabeçalhos e métricas de CPU.
+
+O ^ indica que estamos buscando no início da linha.
+
+### 🧮 Selecionar colunas específicas com awk
+````
+iostat | grep -E "Device|^sda|^sdb|^sdc" | awk '{print $1, $2, $3, $4}'
+````
+Exibe apenas:
+
+Nome do dispositivo.
+
+Transações por segundo.
+
+Dados lidos por segundo.
+
+Dados escritos por segundo.
+
+#### Exemplo de saída:
+
+````
+Device tps kB_read/s kB_wrtn/s
+sda    0.02    1.27       0.00
+sdb    0.00    0.03       0.00
+sdc    1.72   23.12      15.19
+````
+### 📂 Outros casos de uso do comando iostat
+iostat -x → mostra estatísticas detalhadas de cada dispositivo.
+
+iostat -d 2 5 → atualiza a cada 2 segundos, repetindo 5 vezes.
+
+iostat -p sda → exibe estatísticas apenas do dispositivo sda.
+
+iostat -m → mostra valores em megabytes por segundo.
+
+iostat -c → exibe apenas estatísticas da CPU.
+
+Essas variações permitem adaptar o comando iostat para diferentes cenários de análise, seja para relatórios rápidos ou monitoramento contínuo.
