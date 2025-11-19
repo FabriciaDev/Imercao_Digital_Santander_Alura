@@ -2,6 +2,14 @@
 
 O `systemd` é o sistema de inicialização e gerenciamento de serviços mais utilizado nas distribuições modernas do Linux. Ele permite controlar serviços, timers e unidades de forma centralizada, garantindo que processos essenciais sejam iniciados, monitorados e reiniciados automaticamente quando necessário.
 
+O systemd é responsável por gerenciar serviços e processos no Linux.
+
+O comando systemctl permite iniciar, parar, reiniciar e verificar o status de serviços.
+
+É possível configurar serviços para iniciar automaticamente com o sistema.
+
+O systemd também suporta timers e unidades customizadas, ampliando o controle sobre processos.
+
 ## 📌 Uso básico do `systemctl`
 
 ### ▶️ Iniciar um serviço
@@ -23,21 +31,25 @@ sudo systemctl restart nome-do-servico
 Para e inicia novamente o serviço, útil após alterações de configuração.
 
 ### ✅ Verificar status de um serviço
-````bash
+````
 sudo systemctl status nome-do-servico
+````
 Mostra se o serviço está ativo, inativo ou falhou, além de logs recentes.
 
-🔒 Habilitar serviço na inicialização
-bash
+### 🔒 Habilitar serviço na inicialização
+````
 sudo systemctl enable nome-do-servico
+````
 Configura o serviço para iniciar automaticamente junto com o sistema.
 
-🚫 Desabilitar serviço na inicialização
-bash
+### 🚫 Desabilitar serviço na inicialização
+````
 sudo systemctl disable nome-do-servico
+````
 Remove o serviço da inicialização automática.
 
-📂 Outros casos de uso do systemctl
+### 📂 Outros casos de uso do systemctl
+
 systemctl list-units --type=service → lista todos os serviços ativos.
 
 systemctl is-enabled nome-do-servico → verifica se o serviço está habilitado na inicialização.
@@ -48,13 +60,3 @@ systemctl list-timers → mostra timers configurados no systemd.
 
 journalctl -u nome-do-servico → exibe os logs de um serviço específico.
 
-🧾 O que aprendemos
-O systemd é responsável por gerenciar serviços e processos no Linux.
-
-O comando systemctl permite iniciar, parar, reiniciar e verificar o status de serviços.
-
-É possível configurar serviços para iniciar automaticamente com o sistema.
-
-O systemd também suporta timers e unidades customizadas, ampliando o controle sobre processos.
-
-Código
