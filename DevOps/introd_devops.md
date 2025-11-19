@@ -95,3 +95,8 @@ mv *.txt /home/usuario/devops → move todos os arquivos .txt de uma vez.
 
 rm -r pasta → remove uma pasta e seu conteúdo.
 
+> 💡 **Dica sobre uso de curingas no Linux**
+>
+> O comando `ls file*` lista arquivos iniciados por **file** com qualquer sequência de caracteres adicionais, inclusive nada.  
+> Sendo assim, você conseguirá listar todos os arquivos que precisa analisar de forma prática.
+
