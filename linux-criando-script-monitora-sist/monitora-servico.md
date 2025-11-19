@@ -60,3 +60,56 @@ systemctl list-timers → mostra timers configurados no systemd.
 
 journalctl -u nome-do-servico → exibe os logs de um serviço específico.
 
+## ⏱️ Usando Timers no systemd
+
+Os **timers** do systemd permitem agendar a execução de serviços em intervalos regulares ou em horários específicos, substituindo (ou complementando) o uso do `cron`. Eles são úteis para automatizar scripts de monitoramento, backups e outras tarefas recorrentes.
+
+### 📌 Estrutura básica de um arquivo de timer
+
+Um arquivo de timer é criado em `/etc/systemd/system/` com extensão `.timer`.  
+Exemplo: `monitoramento-sistema.timer`
+
+```ini
+[Unit]
+Description=Timer para executar o script de monitoramento
+
+[Timer]
+OnCalendar=*:0/15
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+````
+#### 🧾 Explicando os parâmetros
+OnCalendar=:0/15* Executa o serviço a cada 15 minutos.
+
+* → qualquer hora.
+
+0/15 → minutos múltiplos de 15 (0, 15, 30, 45).
+
+Persistent=true Garante que, se o sistema estiver desligado durante o horário agendado, o serviço será executado assim que o sistema for ligado novamente (compensa execuções perdidas).
+
+WantedBy=timers.target Define que o timer será iniciado junto com o alvo padrão de timers do systemd.
+
+### ▶️ Comandos úteis para timers
+````
+sudo systemctl daemon-reload        # Recarrega as configurações do systemd
+sudo systemctl enable monitoramento-sistema.timer   # Habilita o timer na inicialização
+sudo systemctl start monitoramento-sistema.timer    # Inicia o timer imediatamente
+sudo systemctl status monitoramento-sistema.timer   # Verifica se o timer está ativo
+sudo systemctl list-timers                         # Lista todos os timers ativos
+`````
+### 📂 Outros casos de uso de timers
+OnCalendar=hourly → executa a cada hora.
+
+OnCalendar=daily → executa uma vez por dia.
+
+OnCalendar=weekly → executa uma vez por semana.
+
+OnCalendar=Mon *-*-* 08:00:00 → executa toda segunda-feira às 8h.
+
+OnBootSec=10min → executa 10 minutos após a inicialização do sistema.
+
+OnUnitActiveSec=30min → executa 30 minutos após a última execução.
+
+👉 Com timers, garantimos que o script de monitoramento rode automaticamente e de forma confiável, sem depender de intervenção manual.
