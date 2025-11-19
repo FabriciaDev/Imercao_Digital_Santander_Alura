@@ -167,3 +167,46 @@ journalctl -p err → mostra apenas mensagens de erro.
 >
 > 🔎 Esse comando força o `systemd` a recarregar todas as unidades e reconhecer as mudanças.  
 > Sem ele, o sistema pode não identificar corretamente os novos serviços ou timers.
+> 
+
+## 🛠️ Entendendo o conceito de serviços
+
+No Linux, um **serviço** (também chamado de *daemon*) é um processo que roda em segundo plano, sem interação direta com o usuário. Ele garante funcionalidades essenciais para o sistema ou para aplicações específicas.
+
+---
+
+### 📌 Características dos serviços
+- Executam em segundo plano.
+- Podem continuar ativos mesmo sem usuários logados.
+- Gerenciam recursos de rede e hardware.
+- Podem ser configurados para iniciar automaticamente no boot.
+
+---
+
+### 🔎 Exemplos comuns de serviços
+- 🌐 **Web services**: Apache, Nginx.  
+- 🔑 **SSH Daemon**: acesso remoto seguro.  
+- 🗄️ **Database services**: MySQL, PostgreSQL.  
+- 📜 **System logging Daemon**: gerenciamento de logs.  
+- 🌐 **Network manager**: controle de rede.
+
+---
+
+### ⚙️ Systemd e unidades (units)
+O `systemd` organiza serviços em **units**, que podem ser de diferentes tipos:
+- `service` → configuração de scripts como serviços.  
+- `socket` → comunicação via sockets.  
+- `target` → agrupamento de serviços.  
+- `mount` → montagem de sistemas de arquivos.  
+- `device` → dispositivos do sistema.  
+
+---
+
+### ▶️ Comandos úteis com `systemctl`
+```bash
+sudo systemctl start nome-do-servico     # Inicia o serviço
+sudo systemctl stop nome-do-servico      # Para o serviço
+sudo systemctl restart nome-do-servico   # Reinicia o serviço
+sudo systemctl status nome-do-servico    # Verifica o status
+sudo systemctl enable nome-do-servico    # Habilita na inicialização
+sudo systemctl disable nome-do-servico   # Desabilita na inicialização
