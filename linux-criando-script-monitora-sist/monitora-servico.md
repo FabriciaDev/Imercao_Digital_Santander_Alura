@@ -113,3 +113,45 @@ OnBootSec=10min → executa 10 minutos após a inicialização do sistema.
 OnUnitActiveSec=30min → executa 30 minutos após a última execução.
 
 👉 Com timers, garantimos que o script de monitoramento rode automaticamente e de forma confiável, sem depender de intervenção manual.
+
+## 📜 Verificando logs com `journalctl`
+
+O `journalctl` é o comando utilizado para consultar os registros de log do `systemd`. Ele permite acompanhar a execução de serviços, identificar erros e confirmar se os timers foram disparados corretamente.
+
+### 📌 Consultar logs de um serviço específico
+
+```bash
+sudo journalctl -u monitoramento-sistema.service
+````
+Exibe o histórico de execução do serviço monitoramento-sistema.service.
+
+Mostra início, término e possíveis mensagens de erro.
+
+Para sair da visualização, pressione Q.
+
+🔎 Consultar logs de um timer
+````bash
+sudo journalctl -u monitoramento-sistema.timer
+````
+Exibe os registros relacionados ao timer.
+
+Útil para confirmar se o agendamento foi disparado nos intervalos corretos.
+
+###  🧮 Limitar a quantidade de registros
+ ````
+sudo journalctl -u monitoramento-sistema.service -n 20
+````
+Mostra apenas os 20 últimos registros do serviço.
+
+Ideal para verificar rapidamente as execuções mais recentes.
+
+### 📂 Outros casos de uso do journalctl
+journalctl -f → acompanha os logs em tempo real (similar ao tail -f).
+
+journalctl --since "1 hour ago" → mostra apenas os registros da última hora.
+
+journalctl --since "2025-11-18 08:00:00" --until "2025-11-18 12:00:00" → filtra por intervalo de tempo.
+
+journalctl -p err → mostra apenas mensagens de erro.
+
+👉 Com o journalctl, garantimos que o monitoramento seja confiável, pois conseguimos validar se os serviços e timers estão funcionando corretamente e diagnosticar problemas rapidamente.
