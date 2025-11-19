@@ -155,3 +155,15 @@ journalctl --since "2025-11-18 08:00:00" --until "2025-11-18 12:00:00" → filtr
 journalctl -p err → mostra apenas mensagens de erro.
 
 👉 Com o journalctl, garantimos que o monitoramento seja confiável, pois conseguimos validar se os serviços e timers estão funcionando corretamente e diagnosticar problemas rapidamente.
+
+> ⚠️ **Alerta Importante: Recarregando o systemd**
+>
+> Sempre que você criar ou alterar arquivos de configuração de serviços ou timers,  
+> é necessário executar o comando:
+>
+> ```bash
+> sudo systemctl daemon-reload
+> ```
+>
+> 🔎 Esse comando força o `systemd` a recarregar todas as unidades e reconhecer as mudanças.  
+> Sem ele, o sistema pode não identificar corretamente os novos serviços ou timers.
