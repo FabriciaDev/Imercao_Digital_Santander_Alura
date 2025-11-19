@@ -10,18 +10,20 @@ sudo systemctl start nome-do-servico
 ```
 Inicia o serviço imediatamente, sem alterar sua configuração de inicialização.
 
-⏹️ Parar um serviço
-bash
+### ⏹️ Parar um serviço
+````
 sudo systemctl stop nome-do-servico
+````
 Interrompe o serviço em execução.
 
-🔄 Reiniciar um serviço
-bash
+### 🔄 Reiniciar um serviço
+````
 sudo systemctl restart nome-do-servico
+````
 Para e inicia novamente o serviço, útil após alterações de configuração.
 
-✅ Verificar status de um serviço
-bash
+### ✅ Verificar status de um serviço
+````bash
 sudo systemctl status nome-do-servico
 Mostra se o serviço está ativo, inativo ou falhou, além de logs recentes.
 
