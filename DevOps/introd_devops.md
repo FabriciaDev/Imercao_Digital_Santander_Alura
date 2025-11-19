@@ -1,4 +1,4 @@
-# 🐧 Linux e DevOps – Aula 1
+# 🐧 Linux e DevOps 
 
 ## 📌 Introdução
 Nesta primeira aula, exploramos a importância do Linux no contexto DevOps e entendemos como o sistema operacional é estruturado.  
@@ -36,24 +36,6 @@ Após inserir a senha, você terá acesso ao terminal da máquina remota.
 >
 > A escalabilidade de recursos é uma característica essencial para um servidor que precisa lidar com grandes volumes de dados.  
 > Ela permite que o sistema utilize mais recursos em função do aumento na demanda, garantindo um desempenho consistente.
-
-# 🖥️ Aula 3 – Explorando o Linux Server
-
-## 📌 Introdução
-Nesta aula, aprendemos a navegar e interagir com um servidor Linux em modo texto.  
-Esse ambiente pode parecer diferente do que usamos em computadores pessoais, mas é o padrão em servidores de produção.  
-A ausência de interface gráfica torna os comandos mais diretos e eficientes.
-
----
-
-## 🔎 Conceitos principais
-
-- **Ambiente sem janelas** → interação feita apenas via terminal.  
-- **Praticidade** → comandos são rápidos e lógicos, facilitando a administração remota.  
-- **Infraestrutura distribuída** → servidores podem estar em qualquer lugar, mas os comandos são os mesmos.  
-- **Estrutura hierárquica de arquivos** → diretórios organizados como uma árvore, ajudando na navegação e organização.
-
----
 
 ## 📂 Comandos básicos explorados
 
