@@ -37,4 +37,79 @@ Após inserir a senha, você terá acesso ao terminal da máquina remota.
 > A escalabilidade de recursos é uma característica essencial para um servidor que precisa lidar com grandes volumes de dados.  
 > Ela permite que o sistema utilize mais recursos em função do aumento na demanda, garantindo um desempenho consistente.
 
+# 🖥️ Aula 3 – Explorando o Linux Server
+
+## 📌 Introdução
+Nesta aula, aprendemos a navegar e interagir com um servidor Linux em modo texto.  
+Esse ambiente pode parecer diferente do que usamos em computadores pessoais, mas é o padrão em servidores de produção.  
+A ausência de interface gráfica torna os comandos mais diretos e eficientes.
+
+---
+
+## 🔎 Conceitos principais
+
+- **Ambiente sem janelas** → interação feita apenas via terminal.  
+- **Praticidade** → comandos são rápidos e lógicos, facilitando a administração remota.  
+- **Infraestrutura distribuída** → servidores podem estar em qualquer lugar, mas os comandos são os mesmos.  
+- **Estrutura hierárquica de arquivos** → diretórios organizados como uma árvore, ajudando na navegação e organização.
+
+---
+
+## 📂 Comandos básicos explorados
+
+### ▶️ Criar arquivos
+```bash
+touch notas.txt
+````
+Cria um arquivo vazio chamado notas.txt.
+
+### 📝 Preencher arquivos
+````bash
+cat > notas.txt
+````
+Permite digitar conteúdo diretamente no arquivo. Para sair, pressione Ctrl + D.
+
+### 📢 Exibir mensagens
+````bash
+echo "Hello world"
+````
+Mostra a mensagem no terminal. Também pode escrever em arquivos:
+
+````bash
+echo "hello world" > notas.txt
+````
+### ✏️ Editar arquivos com nano
+````bash
+sudo apt-get install nano
+nano arquivo_2.txt
+````
+Abre o editor de texto nano. Para sair, pressione Ctrl + X e confirme com Y.
+
+### 📦 Compactar arquivos
+````bash
+tar -czf compactado.tar.gz arquivo_2.txt notas.txt
+````
+Cria um arquivo compactado com os arquivos listados.
+
+### 📂 Mover arquivos
+````bash
+mv compactado.tar.gz /home/usuario/devops
+````
+Move o arquivo compactado para o diretório devops.
+
+### 🗑️ Deletar arquivos
+````bash
+rm notas.txt
+````
+Remove o arquivo especificado.
+
+### 📂 Outros casos de uso
+
+ls -l → lista arquivos com detalhes.
+
+cat arquivo.txt → mostra o conteúdo do arquivo.
+
+mv *.txt /home/usuario/devops → move todos os arquivos .txt de uma vez.
+
+rm -r pasta → remove uma pasta e seu conteúdo.
 
