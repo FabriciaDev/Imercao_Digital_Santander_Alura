@@ -30,4 +30,10 @@ usuario → nome de usuário configurado na máquina remota.
 
 192.168.40.36 → endereço IP da máquina alvo.
 
+> ⚠️ **Alerta: Escalabilidade de Recursos**
+>
+> A escalabilidade de recursos é uma característica essencial para um servidor que precisa lidar com grandes volumes de dados.  
+> Ela permite que o sistema utilize mais recursos em função do aumento na demanda, garantindo um desempenho consistente.
+
+
 Após inserir a senha, você terá acesso ao terminal da máquina remota.
