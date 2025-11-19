@@ -23,3 +23,11 @@ Isso é essencial em DevOps, já que muitas vezes o servidor não está fisicame
 ### ▶️ Exemplo de uso
 ```bash
 ssh usuario@192.168.40.36
+````
+ssh → comando para iniciar a conexão.
+
+usuario → nome de usuário configurado na máquina remota.
+
+192.168.40.36 → endereço IP da máquina alvo.
+
+Após inserir a senha, você terá acesso ao terminal da máquina remota.
