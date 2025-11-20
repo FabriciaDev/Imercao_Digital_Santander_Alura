@@ -119,9 +119,8 @@ fi
 >
 > Sempre coloque variáveis entre aspas: "$var" evita erros com espaços ou valores vazios.
 >
- Prefira checar sucesso de comandos diretamente no if:
- 
-````bash
-if comando; then ... fi
-É mais claro e idiomático.
-````
+> Prefira checar sucesso de comandos diretamente no if:
+> ````bash
+> if comando; then ... fi
+> ````
+> É mais claro e idiomático.
