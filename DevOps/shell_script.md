@@ -13,19 +13,6 @@ Abaixo está um script completo que realiza monitoramento de **logs, rede, disco
 Cada linha está comentada para facilitar o entendimento:
 
 ```bash
-# 🐚 Shell Scripting
-
-## 📌 O que é Shell Scripting?
-Shell Scripting é a prática de escrever **roteiros de comandos** para automatizar tarefas no Linux.  
-Em vez de executar manualmente cada comando no terminal, podemos criar um arquivo `.sh` que descreve o passo a passo.  
-Isso garante **agilidade, repetibilidade e eficiência** em atividades como backup, manutenção e monitoramento.
-
-
-## 📝 Exemplo prático: Script de Backup
-
-Abaixo está o script simples da aula, comentado linha por linha:
-
-```bash
 #!/bin/bash
 # Define que o interpretador será o Bash
 
