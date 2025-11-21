@@ -147,3 +147,10 @@ for arquivo in "${arquivos[@]}"; do
 done
 
 echo "✅ Todos os arquivos foram encontrados. Pronto para compactar!"
+````
+> ### 💡 Dica
+>Use "$@" para capturar todos os parâmetros passados ao script.
+>
+> O teste [ -e arquivo ] verifica se o arquivo existe (seja regular ou diretório).
+>
+> O exit 1 encerra o script em caso de erro, evitando que prossiga com dados faltando.
