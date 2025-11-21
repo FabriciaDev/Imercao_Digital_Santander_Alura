@@ -124,3 +124,26 @@ fi
 > if comando; then ... fi
 > ````
 > É mais claro e idiomático.
+
+# 📂 Verificando existência de arquivos com parâmetros
+
+## 📌 Contexto
+Em scripts de automação, é comum receber uma lista de arquivos como parâmetros.  
+Antes de processar (por exemplo, compactar), é importante verificar se todos existem no diretório.
+
+### 📝 Exemplo prático
+
+```bash
+#!/bin/bash
+# Script que verifica se os arquivos passados como parâmetros existem
+
+arquivos=("$@")   # Captura todos os parâmetros (lista de arquivos)
+
+for arquivo in "${arquivos[@]}"; do
+  if [ ! -e "$arquivo" ]; then
+    echo "❌ Arquivo não encontrado: $arquivo"
+    exit 1
+  fi
+done
+
+echo "✅ Todos os arquivos foram encontrados. Pronto para compactar!"
