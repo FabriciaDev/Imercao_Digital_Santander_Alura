@@ -46,14 +46,14 @@ pgrep
 pgrep nginx
 ````
 ## 🔀 Redirecionamento de saída
-** > **
+**>**
 
 Redireciona a saída de um comando para um arquivo ou dispositivo.
 
 ````bash
 pgrep nginx > resultado.txt
 ````
-** /dev/null **
+**/dev/null**
 Local de descarte no Linux, útil para suprimir saídas desnecessárias.
 
 bash
