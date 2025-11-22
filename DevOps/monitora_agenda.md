@@ -90,3 +90,41 @@ fi
 > chmod +x → Torna o script executável.
 
 📌 Conclusão Com esses comandos e o script, conseguimos monitorar se o Nginx está ativo, registrar data e hora da verificação e dar feedback claro ao usuário. Esse é o primeiro passo para evoluir em direção ao agendamento automático e ao monitoramento contínuo.
+
+## 📊 Coletando métricas do Nginx
+
+Além de verificar se o Nginx está ativo, também é importante monitorar **métricas de desempenho**, como conexões ativas e requisições por segundo.  
+Essas informações ajudam a identificar se o servidor está operando dentro da capacidade ou se está sobrecarregado.
+
+---
+
+### 📝 Script de coleta de métricas
+
+```bash
+#!/bin/bash
+
+get_nginx() {
+  local metrics=$(curl -s "http://localhost/nginx_status")
+  if [[ -n "$metrics" ]]; then
+    local active_connections=$(awk 'NR==1 {print $3}' <<< "$metrics")
+    local requests_per_second=$(awk 'NR==3 {print $2}' <<< "$metrics")
+    echo "Active connections: $active_connections"
+    echo "Requests per second: $requests_per_second"
+  else
+    echo "❌ Falha na coleta das métricas do Nginx."
+  fi
+}
+
+get_nginx
+````
+### 💡 Pontos importantes
+> curl -s → coleta silenciosamente o conteúdo da URL.
+>
+> awk → processa o texto retornado e extrai apenas os valores desejados.
+>
+> Validação → o if [[ -n "$metrics" ]] garante que só processamos se houver resposta.
+>
+> Feedback → mensagens claras informam sucesso ou falha na coleta.
+
+📌 Conclusão Esse script permite acompanhar métricas essenciais do Nginx em tempo real. Com ele, conseguimos identificar se o servidor está sobrecarregado e tomar ações preventivas antes que o serviço fique indisponível.
+
