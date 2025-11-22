@@ -141,32 +141,52 @@ Além disso, podemos tratar **operações inválidas** com o `*`, garantindo que
 
 ```bash
 #!/bin/bash
-# Script de gerenciamento do Nginx usando case/esac
+# Script de gerenciamento e monitoramento do Nginx usando case/esac
 
-read -p "Digite a operação (status/start/stop/restart): " operacao
+read -p "Digite a operação (status/start/stop/restart/monitorar): " operacao
 
 case "$operacao" in
   "status")
     systemctl status nginx
     ;;
+  
   "start")
     sudo systemctl start nginx
     echo "🚀 Nginx iniciado com sucesso."
     ;;
+  
   "stop")
     sudo systemctl stop nginx
     echo "🛑 Nginx parado."
     ;;
+  
   "restart")
     sudo systemctl restart nginx
     echo "🔄 Nginx reiniciado."
     ;;
+  
+  "monitorar")
+    if systemctl is-active --quiet nginx; then
+      echo "✅ Nginx está rodando normalmente."
+    else
+      echo "⚠️ Nginx não está ativo. Tentando reiniciar..."
+      sudo systemctl restart nginx
+
+      if systemctl is-active --quiet nginx; then
+        echo "🚀 Nginx reiniciado com sucesso!"
+      else
+        echo "❌ Falha ao reiniciar o Nginx. Verifique manualmente."
+      fi
+    fi
+    ;;
+  
   *)
     echo "❌ Operação inválida."
-    echo "Uso correto: $0 (status|start|stop|restart)"
+    echo "Uso correto: $0 (status|start|stop|restart|monitorar)"
     exit 1
     ;;
 esac
+
 ````
 > ### 💡 Por que usar case/esac aqui?
 > Menus de escolha: o usuário pode selecionar a ação desejada sem precisar lembrar todos os comandos.
