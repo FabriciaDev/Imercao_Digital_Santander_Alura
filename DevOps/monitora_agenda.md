@@ -76,12 +76,7 @@ if pgrep nginx &> /dev/null; then
 else
   echo "❌ Nginx fora de operação $(date +'%Y-%m-%d %H:%M:%S')"
 fi
-Tornar o script executável
-bash
-chmod +x monitoramento.sh
-Executar o script
-bash
-./monitoramento.sh
+
 ````
 > ### 💡 Comandos usados no script
 > if, then, else, fi → Criam a lógica de verificação.
