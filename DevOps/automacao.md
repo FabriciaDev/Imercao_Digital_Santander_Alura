@@ -38,3 +38,9 @@ case "$operacao" in
     ;;
 esac
 ````
+> 🚨⚡ **ATENÇÃO IMPORTANTE!** ⚡🚨  
+> Sempre lembre de tornar o script **executável** antes de rodar:  
+> ```bash
+> chmod +x nome_do_script.sh
+> ```  
+> Sem isso, o script não vai funcionar! 🔒
