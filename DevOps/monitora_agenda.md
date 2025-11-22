@@ -128,3 +128,56 @@ get_nginx
 
 📌 Conclusão Esse script permite acompanhar métricas essenciais do Nginx em tempo real. Com ele, conseguimos identificar se o servidor está sobrecarregado e tomar ações preventivas antes que o serviço fique indisponível.
 
+## 📑 Processando textos para coleta de dados
+Nem sempre os dados que precisamos monitorar vêm em formato numérico.  
+Muitas vezes eles estão em **arquivos de texto** ou em **saídas de comandos**.  
+O Linux oferece ferramentas poderosas para filtrar e manipular essas informações, permitindo que criemos scripts que coletam exatamente o que precisamos.
+
+### 🛠️ Comandos úteis
+
+### grep  
+Busca padrões em arquivos ou fluxos de entrada.  
+```bash
+grep "erro" /var/log/nginx/error.log
+````
+#### Eencontra todas as linhas que contêm a palavra erro.
+
+```bash
+grep -i
+````
+#### Ignora maiúsculas e minúsculas na busca.
+````bash
+grep -i "warning" /var/log/nginx/error.log
+grep -c
+````
+#### Conta quantas vezes um padrão aparece.
+````bash
+grep -c "200 OK" access.log
+````
+### pipe (|)
+Encadeia comandos, direcionando a saída de um para a entrada de outro.
+````bash
+cat novo.txt | grep "padrão"
+````
+Mostra apenas as linhas do arquivo novo.txt que contêm o padrão especificado.
+
+## 📝 Exemplo prático
+````bash
+#!/bin/bash
+# Script para contar requisições 200 OK no log do Nginx
+
+arquivo="/var/log/nginx/access.log"
+
+if [ -f "$arquivo" ]; then
+  total=$(grep -c "200" "$arquivo")
+  echo "✅ Total de requisições bem-sucedidas: $total"
+else
+  echo "❌ Arquivo de log não encontrado: $arquivo"
+fi
+````
+### 💡 Por que isso é útil?
+> * Permite filtrar informações relevantes em grandes volumes de texto.
+> 
+> * Facilita a criação de relatórios automatizados.
+> 
+> * Ajuda a identificar erros, padrões e métricas sem precisar analisar manualmente arquivos extensos.
