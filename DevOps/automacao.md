@@ -8,7 +8,7 @@ Automatizar é como ter um **assistente invisível** que faz o trabalho por voc�
 Além de economizar tempo, você evita erros humanos e garante que tudo seja feito sempre do mesmo jeito.  
 Ou seja: menos dor de cabeça e mais eficiência 🚀.
 
-## ## 📝 Exemplo prático: Compactar ou Descompactar arquivos
+## 📝 Exemplo prático: Compactar ou Descompactar arquivos
 
 ```bash
 #!/bin/bash
@@ -44,3 +44,65 @@ esac
 > chmod +x nome_do_script.sh
 > ```  
 > Sem isso, o script não vai funcionar! 🔒
+
+## 🌐 Instalando um Servidor Web (Nginx)
+
+### ✨ Introdução: Por que instalar um servidor web?
+Quando acessamos um site, como o da Alura ou qualquer serviço de streaming, não estamos pegando os arquivos direto do computador da empresa.  
+Esses conteúdos ficam hospedados em **servidores web**, que são máquinas configuradas para responder às requisições dos usuários de forma rápida e confiável.  
+
+O **Nginx** é um dos servidores web mais usados no mundo, conhecido por sua **performance** e eficiência em lidar com conteúdos estáticos.  
+Já o **Apache** é outra opção popular, com muitos módulos e flexibilidade.  
+Aqui vamos instalar o **Nginx** para praticar.
+
+---
+
+### 📝 Passo a passo da instalação
+
+```bash
+# 1. Atualizar pacotes do servidor
+sudo apt update
+sudo apt-get update
+
+# 2. Instalar o Nginx
+sudo apt install nginx
+
+# 3. Verificar se o serviço está rodando
+sudo systemctl status nginx
+````
+### ⚙️ Gerenciando o serviço Nginx
+Depois de instalado, você pode controlar o servidor web com o systemctl:
+
+````bash
+# Parar o serviço
+sudo systemctl stop nginx
+
+# Iniciar o serviço
+sudo systemctl start nginx
+
+# Reiniciar o serviço (útil após mudanças de configuração)
+sudo systemctl restart nginx
+
+# Verificar se está ativo
+sudo systemctl status nginx
+
+# Habilitar para iniciar automaticamente junto com o sistema
+sudo systemctl enable nginx
+
+# Desabilitar para não iniciar automaticamente
+sudo systemctl disable nginx
+````
+### 🔎 Monitoramento
+
+systemctl status nginx → mostra se o servidor está ativo.
+
+systemctl stop nginx → desliga o serviço.
+
+systemctl start nginx → liga o serviço.
+
+systemctl restart nginx → reinicia, aplicando mudanças.
+
+systemctl enable/disable nginx → controla se o serviço sobe junto com o sistema.
+
+### 📌 Conclusão
+Agora temos um servidor web instalado e sabemos como ligar, desligar e monitorar o Nginx. Esse é o primeiro passo para hospedar páginas e serviços, e abre caminho para pensar em monitoramento automático e automação de deploys
