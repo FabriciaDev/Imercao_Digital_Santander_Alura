@@ -104,5 +104,29 @@ systemctl restart nginx → reinicia, aplicando mudanças.
 
 systemctl enable/disable nginx → controla se o serviço sobe junto com o sistema.
 
+### 🤖 Automatizando o monitoramento do Nginx
+
+Em ambientes de produção, é essencial garantir que o servidor web esteja sempre ativo.  
+Podemos criar um script simples que verifica o status do Nginx e reinicia o serviço automaticamente se ele parar.
+
+```bash
+#!/bin/bash
+# Script de monitoramento do Nginx
+
+# Verifica se o Nginx está ativo
+if systemctl is-active --quiet nginx; then
+  echo "✅ Nginx está rodando normalmente."
+else
+  echo "⚠️ Nginx não está ativo. Tentando reiniciar..."
+  sudo systemctl restart nginx
+
+  # Verifica novamente após reiniciar
+  if systemctl is-active --quiet nginx; then
+    echo "🚀 Nginx reiniciado com sucesso!"
+  else
+    echo "❌ Falha ao reiniciar o Nginx. Verifique manualmente."
+  fi
+fi
+````
 ### 📌 Conclusão
 Agora temos um servidor web instalado e sabemos como ligar, desligar e monitorar o Nginx. Esse é o primeiro passo para hospedar páginas e serviços, e abre caminho para pensar em monitoramento automático e automação de deploys
