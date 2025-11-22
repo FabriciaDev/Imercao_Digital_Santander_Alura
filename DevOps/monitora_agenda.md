@@ -16,49 +16,58 @@ Essas práticas são pilares do **DevOps**, pois permitem que sistemas funcionem
 
 ### 🛠️ Principais comandos
 
-**`top`**  
-  Exibe uma lista geral dos processos em execução, mostrando uso de CPU, memória e tempo de execução.  
-  ```bash
-  top
-Filtragem de processos
+#### top  
+Exibe uma lista geral dos processos em execução, mostrando uso de CPU, memória e tempo de execução.  
+```bash
+top
+````
+#### ps aux
+Lista detalhada de todos os processos.
 
-ps aux → Lista detalhada de todos os processos.
-
-bash
+````bash
 ps aux
-grep → Permite pesquisar processos específicos, como os do Nginx.
+````
+#### grep
+Permite pesquisar processos específicos, como os do Nginx.
 
-bash
+````bash
 ps aux | grep nginx
-grep -v → Inverte a pesquisa, excluindo processos que correspondam ao padrão.
+grep -v
+````
+#### Inverte a pesquisa, excluindo processos que correspondam ao padrão.
 
-bash
+```` bash
 ps aux | grep -v grep | grep nginx
-pgrep → Filtra diretamente os processos relacionados a um nome.
+pgrep
+````
+#### Filtra diretamente os processos relacionados a um nome.
 
-bash
+````bash
 pgrep nginx
-Redirecionamento de saída
+````
+## 🔀 Redirecionamento de saída
+** > **
 
-> → Redireciona a saída de um comando para um arquivo ou dispositivo.
+Redireciona a saída de um comando para um arquivo ou dispositivo.
 
-bash
+````bash
 pgrep nginx > resultado.txt
-/dev/null → Local de descarte no Linux, útil para suprimir saídas desnecessárias.
+````
+** /dev/null **
+Local de descarte no Linux, útil para suprimir saídas desnecessárias.
 
 bash
 pgrep nginx > /dev/null
-&> → Redireciona tanto a saída padrão quanto a de erro.
+&>
+Redireciona tanto a saída padrão quanto a de erro.
 
 bash
 pgrep nginx &> /dev/null
 📝 Criação de um script de monitoramento
 Abrir o editor
-
 bash
 nano monitoramento.sh
 Escrever o script
-
 bash
 #!/bin/bash
 # Script para verificar status do Nginx
@@ -69,11 +78,9 @@ else
   echo "❌ Nginx fora de operação $(date +'%Y-%m-%d %H:%M:%S')"
 fi
 Tornar o script executável
-
 bash
 chmod +x monitoramento.sh
 Executar o script
-
 bash
 ./monitoramento.sh
 💡 Comandos usados no script
