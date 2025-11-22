@@ -62,7 +62,14 @@ case "$operacao" in
     exit 1
     ;;
 esac
-
+````
+> 💡 Dica rápida
+>
+> O * captura qualquer entrada não prevista.
+>
+> Sempre mostre ao usuário como usar o script corretamente.
+>
+> Use exit 1 para indicar que houve erro
 ---
 ## 📝 Exemplo de Script de Monitoramento
 
