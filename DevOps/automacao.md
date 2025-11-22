@@ -216,3 +216,8 @@ Agora temos um servidor web instalado e sabemos como ligar, desligar, reiniciar 
 | **Consumo de recursos** | Maior consumo de memória e CPU em tráfego intenso. | Mais leve, eficiente e econômico em recursos. |
 | **Casos de uso ideais** | Sites dinâmicos, aplicações que dependem de muitos módulos e flexibilidade de configuração. | Sites com conteúdo estático, aplicações que precisam lidar com alto tráfego e escalabilidade. |
 
+### 📌 Resumo:
+
+* Use Apache → quando precisa de flexibilidade, suporte a módulos e conteúdo dinâmico.
+
+* Use Nginx → quando o foco é conteúdo estático e alto desempenho em tráfego intenso.
