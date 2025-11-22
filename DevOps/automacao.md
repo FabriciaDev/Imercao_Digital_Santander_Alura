@@ -290,5 +290,5 @@ echo "✅ Atualização concluída com sucesso!"
 > 
 > * apt autoremove -y → remove pacotes que não são mais necessários.
 > 
-> O script garante consistência e evita esquecer etapas importantes.
+> * O script garante consistência e evita esquecer etapas importantes.
 
