@@ -1,6 +1,7 @@
 # 🤖Automação de Tarefas
 
 ## ✨ Introdução: Porque automatizar?
+
 Você já parou pra pensar em quantas vezes repete as mesmas tarefas no servidor?  
 Fazer backup, mover arquivos, compactar, descompactar… tudo isso pode virar uma rotina cansativa se feito manualmente.  
 
@@ -129,6 +130,7 @@ else
 fi
 ````
 ### 📌 Conclusão
+
 Agora temos um servidor web instalado e sabemos como ligar, desligar e monitorar o Nginx. Esse é o primeiro passo para hospedar páginas e serviços, e abre caminho para pensar em monitoramento automático e automação de deploys
 
 ## 🤖 Automatizando o gerenciamento do Nginx com case/esac
@@ -136,6 +138,7 @@ Agora temos um servidor web instalado e sabemos como ligar, desligar e monitorar
 Em ambientes de produção, não basta instalar o servidor web — é preciso **gerenciar e monitorar** o serviço constantemente.  
 O `case/esac` é ideal nesses cenários porque permite criar um **menu de escolhas** para o usuário, deixando o script mais limpo e fácil de expandir.  
 Além disso, podemos tratar **operações inválidas** com o `*`, garantindo que o script não quebre se o usuário digitar algo errado.
+
 ---
 ### 📝 Exemplo prático
 
@@ -197,4 +200,6 @@ esac
 >
 > Escalabilidade: fácil adicionar novas opções (ex.: “monitorar” ou “enable/disable”).
 
-### 📌 Conclusão Agora temos um servidor web instalado e sabemos como ligar, desligar, reiniciar e monitorar o Nginx usando um script interativo. Esse é o primeiro passo para hospedar páginas e serviços, e abre caminho para pensar em monitoramento automático e automação de deploys.
+### 📌 Conclusão 
+
+Agora temos um servidor web instalado e sabemos como ligar, desligar, reiniciar e monitorar o Nginx usando um script interativo. Esse é o primeiro passo para hospedar páginas e serviços, e abre caminho para pensar em monitoramento automático e automação de deploys.
