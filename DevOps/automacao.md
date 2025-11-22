@@ -130,3 +130,51 @@ fi
 ````
 ### 📌 Conclusão
 Agora temos um servidor web instalado e sabemos como ligar, desligar e monitorar o Nginx. Esse é o primeiro passo para hospedar páginas e serviços, e abre caminho para pensar em monitoramento automático e automação de deploys
+
+## 🤖 Automatizando o gerenciamento do Nginx com case/esac
+
+Em ambientes de produção, não basta instalar o servidor web — é preciso **gerenciar e monitorar** o serviço constantemente.  
+O `case/esac` é ideal nesses cenários porque permite criar um **menu de escolhas** para o usuário, deixando o script mais limpo e fácil de expandir.  
+Além disso, podemos tratar **operações inválidas** com o `*`, garantindo que o script não quebre se o usuário digitar algo errado.
+---
+### 📝 Exemplo prático
+
+```bash
+#!/bin/bash
+# Script de gerenciamento do Nginx usando case/esac
+
+read -p "Digite a operação (status/start/stop/restart): " operacao
+
+case "$operacao" in
+  "status")
+    systemctl status nginx
+    ;;
+  "start")
+    sudo systemctl start nginx
+    echo "🚀 Nginx iniciado com sucesso."
+    ;;
+  "stop")
+    sudo systemctl stop nginx
+    echo "🛑 Nginx parado."
+    ;;
+  "restart")
+    sudo systemctl restart nginx
+    echo "🔄 Nginx reiniciado."
+    ;;
+  *)
+    echo "❌ Operação inválida."
+    echo "Uso correto: $0 (status|start|stop|restart)"
+    exit 1
+    ;;
+esac
+````
+> ### 💡 Por que usar case/esac aqui?
+> Menus de escolha: o usuário pode selecionar a ação desejada sem precisar lembrar todos os comandos.
+>
+> Código limpo: evita uma sequência longa de if/elif/else.
+>
+> Tratamento de erros: o * captura qualquer entrada inesperada.
+>
+> Escalabilidade: fácil adicionar novas opções (ex.: “monitorar” ou “enable/disable”).
+
+### 📌 Conclusão Agora temos um servidor web instalado e sabemos como ligar, desligar, reiniciar e monitorar o Nginx usando um script interativo. Esse é o primeiro passo para hospedar páginas e serviços, e abre caminho para pensar em monitoramento automático e automação de deploys.
