@@ -203,3 +203,16 @@ esac
 ### 📌 Conclusão 
 
 Agora temos um servidor web instalado e sabemos como ligar, desligar, reiniciar e monitorar o Nginx usando um script interativo. Esse é o primeiro passo para hospedar páginas e serviços, e abre caminho para pensar em monitoramento automático e automação de deploys.
+
+## 📊 Apache vs Nginx: quando usar cada um
+
+| Critério | Apache | Nginx |
+|----------|--------|-------|
+| **Arquitetura** | Baseado em processos/threads. Cada requisição abre um processo, consumindo mais memória. | Baseado em eventos assíncronos. Um processo gerencia várias conexões simultâneas com baixo consumo. |
+| **Desempenho em conteúdo estático** | Bom, mas pode sofrer em cenários de alto tráfego devido ao modelo de processos. | Excelente. Projetado para servir conteúdo estático de forma rápida e eficiente. |
+| **Desempenho em conteúdo dinâmico** | Forte integração com módulos como PHP, Perl, Python. Muito flexível. | Precisa de integração com outros serviços (ex.: FastCGI, PHP-FPM). Não tão nativo quanto Apache. |
+| **Configuração** | Suporta `.htaccess`, permitindo configurações por diretório. Útil em hospedagens compartilhadas. | Não suporta `.htaccess`. Configuração centralizada, mais segura e performática. |
+| **Escalabilidade** | Pode enfrentar limitações em cenários de milhares de conexões simultâneas. | Escala melhor em alto volume de tráfego (resolveu o “C10k problem”). |
+| **Consumo de recursos** | Maior consumo de memória e CPU em tráfego intenso. | Mais leve, eficiente e econômico em recursos. |
+| **Casos de uso ideais** | Sites dinâmicos, aplicações que dependem de muitos módulos e flexibilidade de configuração. | Sites com conteúdo estático, aplicações que precisam lidar com alto tráfego e escalabilidade. |
+
