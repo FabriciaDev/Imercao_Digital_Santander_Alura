@@ -249,10 +249,10 @@ done
 echo "🎉 Conversão concluída!"
 ````
 > ### 💡 Pontos importantes
-> O convert faz parte do ImageMagick, então certifique-se de que ele esteja instalado (sudo apt install imagemagick).
+> * O convert faz parte do ImageMagick, então certifique-se de que ele esteja instalado (sudo apt install imagemagick).
 > 
-> ${imagem_jpg%.jpg}.png → remove a extensão .jpg e adiciona .png.
+> * ${imagem_jpg%.jpg}.png → remove a extensão .jpg e adiciona .png.
 > 
-> O && e || permitem mostrar mensagens de sucesso ou falha em cada conversão.
+> * O && e || permitem mostrar mensagens de sucesso ou falha em cada conversão.
 >
-> O script pede o diretório ao usuário, tornando-o flexível para diferentes pastas.
+> * O script pede o diretório ao usuário, tornando-o flexível para diferentes pastas.
