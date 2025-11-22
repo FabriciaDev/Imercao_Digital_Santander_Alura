@@ -221,3 +221,30 @@ Agora temos um servidor web instalado e sabemos como ligar, desligar, reiniciar 
 * Use Apache → quando precisa de flexibilidade, suporte a módulos e conteúdo dinâmico.
 
 * Use Nginx → quando o foco é conteúdo estático e alto desempenho em tráfego intenso.
+
+## 🖼️ Automatizando a conversão de imagens (.jpg → .png)
+
+### 📝 Script de conversão
+
+```bash
+#!/bin/bash
+# Script para converter imagens JPG em PNG
+
+# Solicita ao usuário o diretório onde estão as imagens
+read -p "Digite o caminho do diretório com as imagens JPG: " diretorio
+
+# Verifica se o diretório existe
+if [ ! -d "$diretorio" ]; then
+    echo "❌ Diretório não encontrado: $diretorio"
+    exit 1
+fi
+
+# Percorre todas as imagens .jpg e converte para .png
+for imagem_jpg in "$diretorio"/*.jpg; do
+    convert "$imagem_jpg" "${imagem_jpg%.jpg}.png" \
+      && echo "✅ Imagem convertida: ${imagem_jpg%.jpg}.png" \
+      || echo "⚠️ Falha na conversão: $imagem_jpg"
+done
+
+echo "🎉 Conversão concluída!"
+````
