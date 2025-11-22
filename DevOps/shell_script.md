@@ -39,6 +39,30 @@ fi
 echo "Script finalizado!"
 
 ````
+### 🚫 Tratando operações inválidas no case/esac
+
+Sempre que usamos `case/esac`, é importante prever o que acontece se o usuário digitar uma opção que não existe.  
+Para isso, usamos o `*` (asterisco), que funciona como **default**.
+
+```bash
+#!/bin/bash
+
+read -p "Digite a operação (compactar/descompactar): " operacao
+
+case "$operacao" in
+  "compactar")
+    echo "📦 Você escolheu compactar arquivos."
+    ;;
+  "descompactar")
+    echo "📂 Você escolheu descompactar arquivos."
+    ;;
+  *)
+    echo "❌ Operação inválida."
+    echo "Uso correto: $0 (compactar|descompactar)"
+    exit 1
+    ;;
+esac
+
 ---
 ## 📝 Exemplo de Script de Monitoramento
 
