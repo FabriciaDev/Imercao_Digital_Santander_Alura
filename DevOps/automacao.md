@@ -256,3 +256,39 @@ echo "🎉 Conversão concluída!"
 > * O && e || permitem mostrar mensagens de sucesso ou falha em cada conversão.
 >
 > * O script pede o diretório ao usuário, tornando-o flexível para diferentes pastas.
+
+## 🔄 Automatizando a atualização de pacotes
+
+### 📝 Script de atualização
+
+```bash
+#!/bin/bash
+# Script para atualizar pacotes do sistema
+
+echo "🔄 Iniciando atualização de pacotes..."
+
+# Atualiza a lista de pacotes disponíveis
+sudo apt update
+
+# Atualiza os pacotes instalados
+sudo apt upgrade -y
+
+# Atualiza também pacotes que dependem de mudanças maiores
+sudo apt full-upgrade -y
+
+# Remove pacotes obsoletos
+sudo apt autoremove -y
+
+echo "✅ Atualização concluída com sucesso!"
+````
+### 💡 Pontos importantes
+> * apt update → atualiza a lista de pacotes disponíveis.
+>
+> * apt upgrade -y → instala as atualizações sem pedir confirmação.
+>
+> * apt full-upgrade -y → aplica atualizações que podem alterar dependências.
+> 
+> * apt autoremove -y → remove pacotes que não são mais necessários.
+> 
+> O script garante consistência e evita esquecer etapas importantes.
+
