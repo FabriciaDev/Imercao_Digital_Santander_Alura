@@ -6,7 +6,40 @@ Em vez de executar manualmente cada comando no terminal, podemos escrever um arq
 Isso garante **agilidade, repetibilidade e eficiência** em atividades como monitoramento, backup e manutenção de servidores.
 
 ---
+## 🎯 Estrutura básica necessária em qualquer shell script
+````bash
+#!/bin/bash
+# 👆 Sempre começa com o "shebang", indicando qual interpretador será usado (neste caso, bash).
 
+# -----------------------------------
+# 1. Declaração de variáveis
+mensagem="Olá, este é meu primeiro script!"
+arquivo="saida.txt"
+
+# -----------------------------------
+# 2. Entrada de dados (opcional)
+read -p "Digite seu nome: " nome
+
+# -----------------------------------
+# 3. Processamento (lógica do script)
+# Aqui você coloca os comandos que fazem o trabalho
+echo "Bem-vindo(a), $nome!" > "$arquivo"
+echo "$mensagem" >> "$arquivo"
+
+# -----------------------------------
+# 4. Estruturas de decisão (opcional)
+if [[ -e "$arquivo" ]]; then
+  echo "✅ O arquivo $arquivo foi criado com sucesso."
+else
+  echo "❌ Houve um problema ao criar o arquivo."
+fi
+
+# -----------------------------------
+# 5. Saída final
+echo "Script finalizado!"
+
+````
+---
 ## 📝 Exemplo de Script de Monitoramento
 
 Abaixo está um script completo que realiza monitoramento de **logs, rede, disco e hardware**.  
