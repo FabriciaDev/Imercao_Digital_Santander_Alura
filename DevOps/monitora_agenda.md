@@ -46,29 +46,28 @@ pgrep
 pgrep nginx
 ````
 ## 🔀 Redirecionamento de saída
-**>**
+#### >
 
 Redireciona a saída de um comando para um arquivo ou dispositivo.
 
 ````bash
 pgrep nginx > resultado.txt
 ````
-**/dev/null**
+#### /dev/null
+
 Local de descarte no Linux, útil para suprimir saídas desnecessárias.
 
-bash
+````bash
 pgrep nginx > /dev/null
-&>
+````
+#### &>
 Redireciona tanto a saída padrão quanto a de erro.
 
-bash
+````bash
 pgrep nginx &> /dev/null
+````
 📝 Criação de um script de monitoramento
-Abrir o editor
-bash
-nano monitoramento.sh
-Escrever o script
-bash
+````bash
 #!/bin/bash
 # Script para verificar status do Nginx
 
@@ -83,15 +82,16 @@ chmod +x monitoramento.sh
 Executar o script
 bash
 ./monitoramento.sh
-💡 Comandos usados no script
-if, then, else, fi → Criam a lógica de verificação.
-
-pgrep nginx &> /dev/null → Verifica se o Nginx está em execução sem exibir saída.
-
-echo → Exibe mensagens informativas ao usuário.
-
-date → Inclui data e hora da verificação.
-
-chmod +x → Torna o script executável.
+````
+> ### 💡 Comandos usados no script
+> if, then, else, fi → Criam a lógica de verificação.
+>
+> pgrep nginx &> /dev/null → Verifica se o Nginx está em execução sem exibir saída.
+> 
+> echo → Exibe mensagens informativas ao usuário.
+> 
+> date → Inclui data e hora da verificação.
+> 
+> chmod +x → Torna o script executável.
 
 📌 Conclusão Com esses comandos e o script, conseguimos monitorar se o Nginx está ativo, registrar data e hora da verificação e dar feedback claro ao usuário. Esse é o primeiro passo para evoluir em direção ao agendamento automático e ao monitoramento contínuo.
