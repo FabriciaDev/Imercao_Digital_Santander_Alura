@@ -1,4 +1,4 @@
-# 🪟 Comandos PowerShell para Cibersegurança
+# 💡 Comandos PowerShell para Cibersegurança
 
 Todo mundo ama falar dos comandos **Linux**… mas e o **Windows**, gente??  
 Mais da metade dos incidentes que você investiga, 90% dos usuários que você atende e 99,9% dos prints que aparecem no WhatsApp são de **Microsoft Windows**.  
