@@ -78,7 +78,7 @@ Vc escaneia usando um “zumbi”. O alvo acha q é outra máquina.
 ➡️ UDP Scan
 ````
  nmap -sU ip
-```
+`````
  Mais lento, mas encontra DNS, NTP, SNMP e outras portas q passam batido.
 
 ➡️ Scan de todas as portas (1–65535)
