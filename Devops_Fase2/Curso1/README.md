@@ -32,3 +32,14 @@ npm install
 npm start
 ````
 O frontend ficará disponível em http://localhost:3000
+
+<
+< ## 📝 Dicas para nomes de domínio
+
+- **Seja claro e fácil de lembrar:** escolha nomes curtos e intuitivos, que reflitam o propósito do site.  
+- **Evite caracteres confusos:** não use hífens, números ou combinações difíceis de digitar.  
+- **Prefira palavras locais:** se o público é brasileiro, use termos em português; se internacional, use inglês.  
+- **Consistência com a marca:** o domínio deve estar alinhado ao nome da empresa ou projeto.  
+- **Extensões adequadas:** `.com` é a mais comum, mas `.org`, `.net` ou regionais como `.com.br` podem ser úteis.  
+- **SEO amigável:** incluir palavras-chave relacionadas ao conteúdo ajuda na indexação.  
+- **Evite nomes genéricos demais:** quanto mais específico, mais fácil de se destacar.  
