@@ -42,5 +42,14 @@ O frontend ficará disponível em http://localhost:3000
 > - **Consistência com a marca:** o domínio deve estar alinhado ao nome da empresa ou projeto.  
 > - **Extensões adequadas:** `.com` é a mais comum, mas `.org`, `.net` ou regionais como `.com.br` podem ser úteis.  
 > - **SEO amigável:** incluir palavras-chave relacionadas ao conteúdo ajuda na indexação.  
-> - **Evite nomes genéricos demais:** quanto mais específico, mais fácil de se destacar.  
+> - **Evite nomes genéricos demais:** quanto mais específico, mais fácil de se destacar.
+
+> ## 🔎 Dicas para identificar URLs suspeitas
+> 
+> Verifique sempre o **domínio principal** (ex.: `banco-online-seguro.com.br`).  
+> Desconfie de **subdomínios excessivos** ou estranhos (ex.: `.login.conta.suporte.cn`).  
+> Atenção a **extensões incomuns** para o serviço (ex.: `.cn` em bancos brasileiros).  
+> Evite clicar em URLs com **parâmetros estranhos** ou muito longos.  
+> Prefira acessar sites digitando o endereço oficial diretamente no navegador.  
+
 
