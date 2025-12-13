@@ -7,6 +7,7 @@ O DNS (Domain Name System) é um dos pilares da internet. Ele funciona como uma 
 Quando você digita um endereço no navegador, uma série de etapas acontece nos bastidores para localizar o servidor correto. A imagem abaixo ilustra esse processo de resolução de nomes:
 
 ### 🔄 Etapas da resolução DNS
+![Processo de resolução DNS](https://github.com/FabriciaDev/Imercao_Digital_Santander_Alura/raw/main/Devops_Fase2/Curso1/cli_ser.PNG)
 
 1. **Cliente → Servidor DNS local**  
    O navegador solicita ao servidor DNS configurado na máquina ou rede que resolva o nome `alura.com.br`.
