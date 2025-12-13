@@ -37,7 +37,7 @@ Depois, basta rodar:
 ````bash
 postman
 ````
-## 🛠️ Ajustando o PATH para o Postman no Kali
+## 🛠️ Ajustando o PATH para o Postman no Debian
 
 Após instalar o Postman via Snap, pode ser necessário adicionar o diretório `/snap/bin` ao PATH para que o comando `postman` seja reconhecido:
 
