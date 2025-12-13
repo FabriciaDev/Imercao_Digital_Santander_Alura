@@ -51,5 +51,86 @@ O frontend ficará disponível em http://localhost:3000
 > Atenção a **extensões incomuns** para o serviço (ex.: `.cn` em bancos brasileiros).  
 > Evite clicar em URLs com **parâmetros estranhos** ou muito longos.  
 > Prefira acessar sites digitando o endereço oficial diretamente no navegador.  
+---
 
+## Ferramentas de diagnóstico e análise de rede
+### Testar conectividade com ping
+Descrição: Verifica se o host responde e mede latência (tempo de ida e volta).
 
+Windows/macOS/Linux:
+````bash
+ping www.youtube.com.br
+````
+Dicas: Compare resultados com sites em regiões diferentes para observar variação de latência.
+
+Sugestão do curso: execute ping em múltiplos sites e compare tempos de resposta, considerando servidores em diferentes regiões.
+
+### Ver rota até o destino com traceroute/tracert
+Descrição: Mostra por quais roteadores (hops) os pacotes passam até chegar ao destino.
+
+Windows:
+
+````powershell
+tracert www.youtube.com.br
+````
+macOS/Linux:
+
+````bash
+traceroute www.youtube.com.br
+````
+No curso, é recomendada a execução de traceroute/tracert para entender o caminho e onde podem ocorrer atrasos.
+
+### Consultar DNS com nslookup ou dig
+Descrição: Verifica como o nome de domínio é resolvido para IP e quais servidores respondem.
+
+Windows/macOS/Linux (nslookup):
+
+````bash
+nslookup alura.com.br
+````
+macOS/Linux (dig):
+
+````bash
+dig alura.com.br +trace
+````
+Dicas: Use +trace no dig para ver cada etapa da resolução (root → TLD → autoritativo).
+
+### Ver seu DNS e IP local
+Descrição: Identifica configurações de rede (IP, DNS, gateway).
+
+Windows:
+
+````powershell
+ipconfig /all
+````
+macOS:
+
+````bash
+scutil --dns
+ifconfig
+````
+Linux:
+
+````bash
+resolvectl status
+ip addr
+````
+### Checar portas e conexões ativas
+Descrição: Vê conexões de rede e portas em uso (útil para troubleshooting).
+
+Windows:
+
+````powershell
+netstat -ano
+````
+macOS/Linux:
+
+````bash
+sudo lsof -i -P -n
+````
+### Dicas práticas
+* Comparação de latência: Teste com domínios em países diferentes para perceber impacto geográfico.
+
+* Diagnóstico de falhas: Se ping falhar, teste traceroute/tracert para localizar o hop problemático.
+
+* DNS lento: Use nslookup/dig em servidores diferentes (ex.: 1.1.1.1, 8.8.8.8) para comparar tempos.
