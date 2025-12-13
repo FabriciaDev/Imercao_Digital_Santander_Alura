@@ -1,0 +1,58 @@
+# 🌐 Sistema de Nomes de Domínio (DNS)
+
+O DNS (Domain Name System) é um dos pilares da internet. Ele funciona como uma "agenda telefônica" que traduz nomes de domínio legíveis por humanos (como `alura.com.br`) em endereços IP compreensíveis por máquinas (como `172.67.72.232`).
+
+## 🧭 Como funciona uma consulta DNS?
+
+Quando você digita um endereço no navegador, uma série de etapas acontece nos bastidores para localizar o servidor correto. A imagem abaixo ilustra esse processo de resolução de nomes:
+
+### 🔄 Etapas da resolução DNS
+
+1. **Cliente → Servidor DNS local**  
+   O navegador solicita ao servidor DNS configurado na máquina ou rede que resolva o nome `alura.com.br`.
+
+2. **Servidor DNS → Servidor Raiz**  
+   O servidor DNS local não sabe a resposta, então pergunta ao servidor raiz onde encontrar informações sobre o domínio `.br`.
+
+3. **Servidor Raiz → Servidor DNS**  
+   O servidor raiz responde com o endereço do servidor TLD (Top-Level Domain) responsável pelo `.br`.
+
+4. **Servidor DNS → Servidor TLD**  
+   O servidor DNS local então pergunta ao servidor TLD onde encontrar o domínio `com.br`.
+
+5. **Servidor TLD → Servidor DNS**  
+   O servidor TLD responde com o endereço do servidor autoritativo para `alura.com.br`.
+
+6. **Servidor DNS → Servidor Autoritativo**  
+   O servidor DNS local consulta o servidor autoritativo para obter o IP de `alura.com.br`.
+
+7. **Servidor Autoritativo → Servidor DNS**  
+   O servidor autoritativo responde com o IP: `172.67.72.232`.
+
+8. **Servidor DNS → Cliente**  
+   O servidor DNS local envia o IP de volta ao cliente.
+
+9. **Cliente → alura.com.br**  
+   Com o IP em mãos, o cliente faz a requisição diretamente ao servidor da Alura.
+
+10. **alura.com.br → Cliente**  
+    O servidor da Alura responde com o conteúdo solicitado.
+
+---
+
+## 🧠 Analogia simples
+
+Imagine que você quer ligar para a Alura, mas só tem o nome dela. Você:
+
+- Pergunta à operadora (DNS local) se ela sabe o número.
+- Ela consulta a lista internacional (servidor raiz).
+- A lista internacional indica a lista brasileira (TLD).
+- A lista brasileira aponta para a lista da Alura (autoritativo).
+- Finalmente, você recebe o número (IP) e faz a ligação (requisição HTTP).
+
+---
+
+## ✅ Conclusão
+
+O DNS é essencial para tornar a navegação na web intuitiva e eficiente. Sem ele, teríamos que memorizar longas sequências de números em vez de nomes amigáveis.
+
