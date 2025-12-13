@@ -37,6 +37,19 @@ Depois, basta rodar:
 ````bash
 postman
 ````
+## 🛠️ Ajustando o PATH para o Postman no Kali
+
+Após instalar o Postman via Snap, pode ser necessário adicionar o diretório `/snap/bin` ao PATH para que o comando `postman` seja reconhecido:
+
+```bash
+echo 'export PATH=$PATH:/snap/bin' >> ~/.bashrc
+source ~/.bashrc
+````
+Depois disso, basta abrir um novo terminal e executar:
+
+````bash
+postman
+````
 ## 🚀 Como usar
 Abrir o Postman Execute postman no terminal ou abra pelo menu de aplicativos.
 
