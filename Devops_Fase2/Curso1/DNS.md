@@ -6,6 +6,28 @@ O DNS (Domain Name System) é um dos pilares da internet. Ele funciona como uma 
 
 Quando você digita um endereço no navegador, uma série de etapas acontece nos bastidores para localizar o servidor correto. A imagem abaixo ilustra esse processo de resolução de nomes:
 
+## 🖥️ Tipos de Servidores DNS
+
+Durante a resolução de nomes, diferentes servidores participam do processo. Cada um tem uma função específica:
+
+### 🔹 Servidor DNS Local (Resolver)
+- **O que é:** É o servidor configurado na sua máquina ou rede (geralmente fornecido pelo provedor de internet).
+- **Para que serve:** Recebe a requisição inicial do cliente e tenta resolver o domínio. Se não souber a resposta, consulta outros servidores (raiz, TLD, autoritativo).
+
+### 🔹 Servidor Raiz
+- **O que é:** É o primeiro nível da hierarquia DNS. Existem poucos servidores raiz distribuídos globalmente.
+- **Para que serve:** Indica qual servidor TLD deve ser consultado para continuar a busca. Ele não fornece o IP final, apenas aponta o caminho.
+
+### 🔹 Servidor TLD (Top-Level Domain)
+- **O que é:** Responsável por domínios de topo, como `.com`, `.org`, `.br`.
+- **Para que serve:** Informa qual servidor autoritativo deve ser consultado para obter informações detalhadas sobre o domínio solicitado.
+
+### 🔹 Servidor Autoritativo
+- **O que é:** É o servidor que contém os registros oficiais de um domínio específico (como `alura.com.br`).
+- **Para que serve:** Fornece a resposta final, retornando o endereço IP associado ao domínio.
+
+---
+
 ### 🔄 Etapas da resolução DNS
 ![Processo de resolução DNS](https://github.com/FabriciaDev/Imercao_Digital_Santander_Alura/raw/main/Devops_Fase2/Curso1/cli_ser.PNG)
 
