@@ -74,8 +74,32 @@ Imagine que você quer ligar para a Alura, mas só tem o nome dela. Você:
 - Finalmente, você recebe o número (IP) e faz a ligação (requisição HTTP).
 
 ---
+## 🗂️ Resolução DNS com e sem Cache
+
+Quando acessamos um site, o servidor DNS configurado na rede pode já ter o endereço IP armazenado em seu **cache**. Isso torna o processo muito mais rápido. Mas e se o endereço não estiver no cache?
+
+### 🔹 Com Cache
+- O servidor DNS local já possui o IP armazenado.
+- Ele responde imediatamente ao cliente sem precisar consultar outros servidores.
+- Resultado: acesso rápido ao site.
+
+### 🔹 Sem Cache
+- O servidor DNS local não encontra o IP solicitado.
+- Ele inicia o processo de **resolução recursiva**, consultando:
+  1. **Servidor Raiz** → indica o TLD correto.
+  2. **Servidor TLD** → aponta para o servidor autoritativo.
+  3. **Servidor Autoritativo** → fornece o IP final.
+- O servidor DNS local guarda essa resposta em cache (respeitando o tempo definido pelo **TTL – Time To Live**).
+- Resultado: acesso ao site, mas com mais etapas envolvidas.
+
+---
+
+📌 **Resumo:**  
+- **Cache presente:** resposta imediata.  
+- **Cache ausente:** o DNS precisa “perguntar” a outros servidores até encontrar o IP.  
 
 ## ✅ Conclusão
 
 O DNS é essencial para tornar a navegação na web intuitiva e eficiente. Sem ele, teríamos que memorizar longas sequências de números em vez de nomes amigáveis.
+
 
