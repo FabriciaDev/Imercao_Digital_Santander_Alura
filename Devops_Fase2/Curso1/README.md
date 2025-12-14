@@ -182,7 +182,7 @@ Content-Type: application/json
   "comentario": "Essa música é incrível!"
 }
 ````
-> 🔐 **Lembrete: Implantar HTTPS**
+> ## 🔐 **Lembrete: Implantar HTTPS**
 > O protocolo HTTP não oferece criptografia, o que significa que dados sensíveis (como senhas, tokens e informações pessoais) podem ser interceptados durante o tráfego.  
 > Implantar HTTPS garante que a comunicação entre cliente e servidor seja cifrada, protegendo contra espionagem e adulteração de informações.
 >
