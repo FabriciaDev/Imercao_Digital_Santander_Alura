@@ -170,13 +170,15 @@ Lembre-se: escolher o método correto garante clareza e consistência na comunic
 
 Imagine que você precisa enviar uma avaliação de música para o servidor.  
 Nesse caso, usamos o método **POST**, pois estamos criando um novo recurso:
-
+````
 POST /api/v1/musicas/{id}/avaliacoes
 Content-Type: application/json
+````
 
+````
 {
   "usuario_id": 123,
   "nota": 5,
   "comentario": "Essa música é incrível!"
 }
-
+````
