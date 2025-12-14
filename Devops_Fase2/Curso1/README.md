@@ -134,3 +134,36 @@ sudo lsof -i -P -n
 * Diagnóstico de falhas: Se ping falhar, teste traceroute/tracert para localizar o hop problemático.
 
 * DNS lento: Use nslookup/dig em servidores diferentes (ex.: 1.1.1.1, 8.8.8.8) para comparar tempos.
+
+## Métodos HTTP: Guia de Uso
+
+Ao trabalhar com APIs REST, os métodos HTTP definem a intenção da requisição.  
+Eles indicam se você quer **consultar**, **criar**, **atualizar** ou **remover** informações no servidor.  
+Lembre-se: escolher o método correto garante clareza e consistência na comunicação entre cliente e servidor.
+
+### Principais métodos
+
+- **GET** → usado para **consultar dados**.  
+  Exemplo: buscar lista de músicas ou detalhes de um usuário.
+
+- **POST** → usado para **criar novos recursos**.  
+  Exemplo: enviar uma avaliação de música ou cadastrar um novo usuário.
+
+- **PUT** → usado para **atualizar completamente** um recurso existente.  
+  Exemplo: substituir todos os dados de uma avaliação já feita.
+
+- **PATCH** → usado para **atualizar parcialmente** um recurso.  
+  Exemplo: alterar apenas a nota de uma avaliação sem mexer no comentário.
+
+- **DELETE** → usado para **remover recursos**.  
+  Exemplo: excluir uma avaliação ou apagar uma playlist.
+
+---
+
+📌 **Dica para lembrar:**  
+- GET → “me mostra”  
+- POST → “cria algo novo”  
+- PUT → “troca tudo”  
+- PATCH → “ajusta só um pedaço”  
+- DELETE → “remove do mapa”
+
