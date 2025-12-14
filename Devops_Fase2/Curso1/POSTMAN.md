@@ -159,7 +159,7 @@ O servidor recebe uma solicitação (request), processa os dados e retorna uma r
 > Na prática, são usados para autenticação, personalização e persistência de sessões. Quando você faz login, por exemplo, o servidor envia um cookie que identifica sua sessão; em cada nova requisição, o navegador devolve esse cookie, garantindo que você continue logado e que sua experiência seja consistente.
 >
 >  👉 Esse resumo captura a essência do que a Alura explica: cookies resolvem a limitação do HTTP ser “stateless” e são fundamentais para manter sessões e personalizar a experiência.
-> > ### 📌 **Tipos de Cookies**
+>  ### 📌 **Tipos de Cookies**
 > Existem dois tipos principais de cookies usados em aplicações web:
 >
 > - **Cookies de sessão**: são temporários e existem apenas enquanto o navegador está aberto. Quando a aba ou o navegador é fechado, eles desaparecem. São muito usados para manter o usuário logado durante uma navegação.
