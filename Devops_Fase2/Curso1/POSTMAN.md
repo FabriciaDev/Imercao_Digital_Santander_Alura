@@ -87,5 +87,69 @@ Resposta esperada
   "body": "quia et suscipit..."
 }
 ````
-✅ Conclusão
-O Postman é essencial para quem trabalha com APIs, pois simplifica testes, documentação e colaboração. No Linux, pode ser instalado via snap ou tar.gz, garantindo flexibilidade em diferentes distribuições.
+
+## Métodos HTTP: Significados
+
+| Método  | Significado                                                                 |
+|---------|------------------------------------------------------------------------------|
+| GET     | Recupera informações do servidor sem alterar os dados                        |
+| POST    | Cria um novo recurso no servidor (envio de dados para serem armazenados)     |
+| PUT     | Atualiza completamente um recurso existente (substitui todos os dados)       |
+| PATCH   | Atualiza parcialmente um recurso existente (modifica apenas alguns campos)   |
+| DELETE  | Remove um recurso existente do servidor                                      |
+
+## Aula: Como funciona um servidor HTTP
+
+Nesta aula entendemos o papel do servidor HTTP e como ele responde às requisições enviadas pelos clientes.  
+O servidor recebe uma solicitação (request), processa os dados e retorna uma resposta (response) com informações sobre o resultado da operação.
+
+### Procedimentos realizados no Postman
+
+1. **Requisição sem autenticação**
+   - Endpoint: `http://localhost:8000/pedidos`
+   - Método: `GET`
+   - Resposta:
+     ```json
+     {
+       "status": 401,
+       "message": "Token inválido"
+     }
+     ```
+   - 🔎 Inferência: o servidor exige autenticação para acessar esse recurso.
+
+2. **Login para obter token**
+   - Endpoint: `http://localhost:8000/public/login`
+   - Método: `POST`
+   - Corpo da requisição:
+     ```json
+     {
+       "email": "lcs@alura.com",
+       "senha": "123"
+     }
+     ```
+   - Resposta: retorna dados de autenticação (token válido).
+
+3. **Requisição autenticada**
+   - Endpoint: `http://localhost:8000/pedidos`
+   - Método: `GET`
+   - Cabeçalho:
+     ```
+     Authorization: Bearer <token>
+     Connection: Keep-alive
+     ```
+   - Resposta: dados do usuário e permissões.
+     ```json
+     {
+       "status": "success",
+       "data": {
+         "user": "devops_user",
+         "permissions": ["read", "write"]
+       }
+     }
+     ```
+
+### Conclusão
+- O servidor HTTP responde com **códigos de status** (200, 401 etc.) que indicam sucesso ou erro.  
+- O Postman foi usado para **simular requisições** e observar como o servidor lida com autenticação e autorização.  
+- Esse fluxo mostra a importância de enviar tokens válidos para acessar recursos protegidos.
+
