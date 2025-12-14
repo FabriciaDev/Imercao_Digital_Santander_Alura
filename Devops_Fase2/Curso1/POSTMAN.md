@@ -153,7 +153,7 @@ O servidor recebe uma solicitação (request), processa os dados e retorna uma r
 - O Postman foi usado para **simular requisições** e observar como o servidor lida com autenticação e autorização.  
 - Esse fluxo mostra a importância de enviar tokens válidos para acessar recursos protegidos.
 
-> 📌 **Saiba mais sobre Cookies**
+> ## 📌 **Saiba mais sobre Cookies**
 > Cookies são arquivos de texto que o navegador guarda para manter informações entre requisições HTTP. Eles permitem que o servidor reconheça o usuário e mantenha a continuidade da navegação, já que o protocolo HTTP por si só não guarda estado.
 >
 > Na prática, são usados para autenticação, personalização e persistência de sessões. Quando você faz login, por exemplo, o servidor envia um cookie que identifica sua sessão; em cada nova requisição, o navegador devolve esse cookie, garantindo que você continue logado e que sua experiência seja consistente.
