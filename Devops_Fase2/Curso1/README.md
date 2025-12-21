@@ -23,7 +23,7 @@ npm run start-auth
 ````
 O backend ficará disponível em http://localhost:8000
 
-3. Baixando o frontend
+## 3. Baixando o frontend
 Em outro terminal:
 ````bash
 git clone https://github.com/alura-cursos/curso-react-alurabooks.git
@@ -59,16 +59,14 @@ cd api-alurabooks
 npm run start-auth
 ````
 
-Frontend:
+#### Frontend:
 
 ````bash
 cd curso-react-alurabooks
 npm start
 ````
 
-Boas práticas
-Sempre finalize os processos Node.js antes de desligar a VM.
-
-Após reiniciar, lembre-se de subir novamente os serviços para garantir que o laboratório esteja funcional.
-
-Essa rotina garante consistência e evita falhas inesperadas durante os exercícios.
+> ###Boas práticas
+> * Sempre finalize os processos Node.js antes de desligar a VM.
+> * Após reiniciar, lembre-se de subir novamente os serviços para garantir que o laboratório esteja funcional.
+> * Essa rotina garante consistência e evita falhas inesperadas durante os exercícios.
