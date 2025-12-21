@@ -7,8 +7,9 @@ Para aproveitar bem essa jornada, recomendamos instalar o projeto em seu computa
 ---
 
 ### 1. Instalando o Node.js
-O Node.js é um ambiente de execução JavaScript fora do navegador, permitindo rodar código no lado do servidor.  
-Vamos utilizá-lo para executar o projeto **All Books**.
+
+O laboratório utiliza **Node.js** para rodar a aplicação web **All Books**.  
+Ele funciona como o servidor responsável por manter o backend ativo dentro da máquina virtual (VM), permitindo que o frontend em React se conecte e ofereça todas as funcionalidades do sistema.
 
 ---
 
