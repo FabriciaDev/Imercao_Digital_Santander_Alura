@@ -66,7 +66,43 @@ cd curso-react-alurabooks
 npm start
 ````
 
-> ###Boas práticas
+> ### Boas práticas
 > * Sempre finalize os processos Node.js antes de desligar a VM.
 > * Após reiniciar, lembre-se de subir novamente os serviços para garantir que o laboratório esteja funcional.
 > * Essa rotina garante consistência e evita falhas inesperadas durante os exercícios.
+
+---
+
+## 5. Explorando requisições HTTP com o navegador
+### Atividade 1
+
+Siga o passo a passo abaixo para observar, na prática, como o modelo cliente-servidor e o protocolo HTTP funcionam durante o carregamento de uma página web.
+
+Passo 1 — Abrir um navegador: Escolha um navegador (Chrome, Firefox, Edge, etc.).
+
+Passo 2 — Acessar um site: Entre em um endereço de sua preferência (por exemplo, alura.com.br ou google.com.br).
+
+Passo 3 — Abrir as ferramentas de desenvolvedor: Pressione F12 ou clique com o botão direito na página e selecione Inspecionar.
+
+Passo 4 — Ir para a guia Network (Rede): Localize e selecione a guia Network para monitorar as requisições.
+
+Passo 5 — Recarregar a página: Pressione Ctrl+R ou clique com o botão direito e escolha Recarregar.
+
+Passo 6 — Listar as requisições HTTP: Observe os itens que aparecem na guia Network (HTML, CSS, JS, imagens, fontes, etc.).
+
+Passo 7 — Inspecionar uma requisição: Clique em uma requisição e examine Headers (cabeçalhos), Payload/Body (corpo), Response (resposta) e Timing (tempo).
+
+Passo 8 — Interagir com a página: Execute ações como login, cadastro ou busca e acompanhe novas requisições em tempo real.
+
+#### O que observar
+Método HTTP: Veja a coluna Method (GET, POST, etc.).
+
+Status da resposta: Note o código (200, 404, 500) e o significado.
+
+URLs e rotas: Observe o caminho solicitado, parâmetros e query strings.
+
+Cabeçalhos: Analise request/response headers (Content-Type, Authorization, Cache-Control).
+
+Corpo da requisição/resposta: Em APIs, confira o JSON enviado/recebido.
+
+Tempo de carregamento: Use Timing para entender latências e gargalos.
