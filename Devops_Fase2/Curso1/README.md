@@ -33,4 +33,41 @@ npm start
 ````
 O frontend ficará disponível em http://localhost:3000
 
+## 4. Gerenciamento da VM e processos Node.js
 
+Durante o uso do laboratório, é importante observar o ciclo de vida da máquina virtual (VM) e dos processos que estão rodando:
+
+### Encerrando a VM
+- Antes de desligar a VM, **encerre manualmente o processo Node.js** que está rodando o backend (`npm run start-auth`).
+- Isso evita problemas de travamento ou corrupção de serviços (como acontece com o Zeek, que pode "quebrar" se não for encerrado corretamente).
+- Para encerrar, utilize:
+ ```bash
+  Ctrl + C
+````
+no terminal onde o backend está rodando.
+
+### Reiniciando a VM
+Ao iniciar novamente a VM, os processos não são retomados automaticamente.
+
+É necessário startar novamente o backend e o frontend:
+
+#### Backend:
+
+````bash
+cd api-alurabooks
+npm run start-auth
+````
+
+Frontend:
+
+````bash
+cd curso-react-alurabooks
+npm start
+````
+
+Boas práticas
+Sempre finalize os processos Node.js antes de desligar a VM.
+
+Após reiniciar, lembre-se de subir novamente os serviços para garantir que o laboratório esteja funcional.
+
+Essa rotina garante consistência e evita falhas inesperadas durante os exercícios.
