@@ -164,6 +164,37 @@ Métodos adicionais no Postman
 | **TRACE**   | Rastrear requisição      | Retorna a requisição recebida para debug    |
 
 ---
+## Depurando métodos HTTP
+ 
+Ao longo da aula, usamos o Postman para interagir com os servidores do All Books utilizando métodos HTTP. Aproveite para explorar essa ferramenta no teste de servidores HTTP.
+
+Quando abrimos o Postman, há um menu lateral à esquerda e uma área de trabalho (chamada de workbench) à direita.
+
+Na parte superior do workbench, clique no ícone de mais (+) para criar uma aba com uma nova requisição. No topo dessa aba, há três elementos:
+
+À esquerda, há um menu cascata em que é possível alternar entre diversos métodos do HTTP — por padrão, o método GET está selecionado.
+No centro, há um campo para digitar a URL.
+À direita, há um botão azul com a inscrição "Send" (enviar).
+Inicie enviando uma requisição ao servidor Frontend para obter as informações para renderização da página inicial do All Books. Assim, selecione o método GET, digite a URL abaixo e clique no botão de enviar.
+````
+http://localhost:3000/
+```` 
+Note que a resposta do servidor é apresentada na parte inferior da interface. Neste caso, trata-se do código HTML contendo todas as informações necessárias para desenhar a tela do Frontend da página All Books.
+
+Faça uma nova requisição, dessa vez, utilizando o método POST. A URL (indicada abaixo) que você utilizará é diferente, pois a requisição será destinada ao servidor backend.
+
+````
+http://localhost:8000/public/login
+````
+Caso ainda não tenha cadastrado um perfil de usuário no All Books, sugerimos que faça agora mesmo, acessando o Frontend do projeto em seu navegador (http://localhost:3000/). Esse é um passo importante, pois as credenciais de acesso cadastradas serão usadas nessa requisição.
+
+Antes de enviar a requisição, será necessário adicionar um JSON em seu corpo (body). Sendo assim, acesse a aba "Body" (no menu abaixo do campo da URL), depois selecione as opções "raw" e "JSON". No campo de texto exibido logo abaixo, insira o corpo da mensagem abaixo substituindo o “inserir” com as credenciais de acesso que você cadastrou:
+````
+{"email": "inserir", "senha": "inserir"}
+```` 
+Agora, basta enviar a requisição ao servidor, clicando no botão “Send”.
+
+A resposta será exibida novamente na parte inferior. Nela você identificará um token de acesso que pode ser usado para acessar páginas protegidas do projeto.
 
 ---
 
