@@ -144,12 +144,24 @@ nslookup www.usp.br
 Este comando fornece informações sobre o endereço IP associado ao domínio "www.usp.br" por meio da resolução DNS.
 
 ---
+## Métodos HTTP
+
 | Método HTTP | Ação em Português | Operação CRUD |
 |-------------|------------------|---------------|
 | **POST**    | Criar            | Create        |
 | **GET**     | Ler              | Read          |
 | **PUT**     | Atualizar        | Update        |
 | **DELETE**  | Apagar           | Delete        |
+
+Métodos adicionais no Postman
+
+| Método HTTP | Ação em Português        | Uso Comum                                   |
+|-------------|--------------------------|---------------------------------------------|
+| **PATCH**   | Atualizar parcialmente   | Modifica apenas campos específicos de um recurso |
+| **HEAD**    | Obter cabeçalhos         | Retorna metadados sem o corpo da resposta   |
+| **OPTIONS** | Descobrir opções         | Mostra métodos suportados pelo servidor     |
+| **CONNECT** | Estabelecer túnel        | Usado para criar conexões via proxy         |
+| **TRACE**   | Rastrear requisição      | Retorna a requisição recebida para debug    |
 
 ---
 
