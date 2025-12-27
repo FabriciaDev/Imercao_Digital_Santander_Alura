@@ -144,3 +144,15 @@ nslookup www.usp.br
 Este comando fornece informações sobre o endereço IP associado ao domínio "www.usp.br" por meio da resolução DNS.
 
 ---
+| Método HTTP | Ação em Português | Operação CRUD |
+|-------------|------------------|---------------|
+| **POST**    | Criar            | Create        |
+| **GET**     | Ler              | Read          |
+| **PUT**     | Atualizar        | Update        |
+| **DELETE**  | Apagar           | Delete        |
+
+---
+
+---
+
+---
