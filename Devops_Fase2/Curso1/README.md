@@ -108,7 +108,7 @@ Corpo da requisição/resposta: Em APIs, confira o JSON enviado/recebido.
 Tempo de carregamento: Use Timing para entender latências e gargalos.
 
 ---
-## Mapeamento de recursos na web
+## 6. Mapeamento de recursos na web
 O acesso e disponibilização de recursos na web é facilitado pelo uso de soluções como DNS (Domain Name System) e URLs (Uniform Resource Locators). O DNS atua na conversão e mapeamento de nomes de domínio em endereços IP, permitindo a localização de servidores na internet. Por outro lado, as URLs são uma forma padronizada de especificar a localização precisa de recursos na web, possibilitando o acesso às informações e serviços de maneira organizada e intuitiva.
 
 Para reforçar o que aprendemos sobre mapeamento de recursos na web, propomos uma lista de atividades (não obrigatórias). Bora explorar um pouco mais sobre o assunto!?
@@ -144,7 +144,7 @@ nslookup www.usp.br
 Este comando fornece informações sobre o endereço IP associado ao domínio "www.usp.br" por meio da resolução DNS.
 
 ---
-## Métodos HTTP
+## 7. Métodos HTTP e o POSTMAN
 
 | Método HTTP | Ação em Português | Operação CRUD |
 |-------------|------------------|---------------|
@@ -231,5 +231,10 @@ A resposta será exibida novamente na parte inferior. Nela você identificará u
 * Insira a URL do site do YouTube (www.youtube.com).
 * Clique em "Send" e analise a resposta HTML no painel de visualização, extraindo informações relevantes da estrutura HTML da página.
 ---
+## 8. Adaptando LAB:
+Para tornar o projeto All Books mais seguro contra interceptações na web, vamos utilizar o kit de ferramentas OpenSSL. Esse kit é uma implementação de código aberto que permite, entre outras coisas, gerar chaves privadas e certificados digitais. Há algumas recomendações específicas para o uso do OpenSSL, dependendo do sistema operacional que você estiver utilizando.
 
+````
+sudo apt install openssl
+````
 ---
