@@ -106,3 +106,41 @@ Cabeçalhos: Analise request/response headers (Content-Type, Authorization, Cach
 Corpo da requisição/resposta: Em APIs, confira o JSON enviado/recebido.
 
 Tempo de carregamento: Use Timing para entender latências e gargalos.
+
+---
+## Mapeamento de recursos na web
+O acesso e disponibilização de recursos na web é facilitado pelo uso de soluções como DNS (Domain Name System) e URLs (Uniform Resource Locators). O DNS atua na conversão e mapeamento de nomes de domínio em endereços IP, permitindo a localização de servidores na internet. Por outro lado, as URLs são uma forma padronizada de especificar a localização precisa de recursos na web, possibilitando o acesso às informações e serviços de maneira organizada e intuitiva.
+
+Para reforçar o que aprendemos sobre mapeamento de recursos na web, propomos uma lista de atividades (não obrigatórias). Bora explorar um pouco mais sobre o assunto!?
+
+### Atividade 1
+
+ping youtube.com
+
+O comando ping é usado para testar a conectividade com um servidor. Neste caso, ao pingar "youtube.com", você obterá o endereço IP associado à plataforma Youtube.
+
+### Atividade 2
+
+tracert alura.com.br
+
+O comando tracert rastreia a rota que os pacotes de dados percorrem até alcançar o destino, revelando as direções que as mensagens enviadas do seu computador para a plataforma da Alura seguem.
+
+### Atividade 3
+
+nslookup www.google.com
+
+O comando nslookup é utilizado para realizar a resolução de DNS, fornecendo informações sobre o endereço IP associado ao domínio.
+
+### Atividade 4
+
+tracert www.utwente.nl
+
+Compare o tempo e a rota de encaminhamento obtidos nessa atividade com os resultados observados na atividade 2.
+
+### Atividade 5
+
+nslookup www.usp.br
+
+Este comando fornece informações sobre o endereço IP associado ao domínio "www.usp.br" por meio da resolução DNS.
+
+---
