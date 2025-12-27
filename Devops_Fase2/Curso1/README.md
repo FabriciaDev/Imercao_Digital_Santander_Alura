@@ -196,6 +196,40 @@ Agora, basta enviar a requisição ao servidor, clicando no botão “Send”.
 
 A resposta será exibida novamente na parte inferior. Nela você identificará um token de acesso que pode ser usado para acessar páginas protegidas do projeto.
 
+### Atividade 1
+
+* Abra o Postman e crie uma nova solicitação.
+* Insira a URL de sua escolha no campo apropriado.
+* Selecione o método como GET.
+* Clique em "Send" para executar a solicitação.
+* Analise a resposta no painel de visualização, observando o corpo, cabeçalhos e código de status.
+
+### Atividade 2
+
+* Mantenha a solicitação anterior aberta no Postman.
+* Adicione parâmetros de consulta à URL (por exemplo, "?parametro1=valor1&parametro2=valor2").
+* Clique em "Send" novamente e observe como os parâmetros afetam a resposta.
+
+### Atividade 3
+
+* Crie uma nova solicitação no Postman.
+* Insira a URL adequada.
+* Escolha o método como POST.
+* No corpo da solicitação, selecione "raw" e escolha o formato JSON.
+* Insira dados JSON válidos no corpo.
+* Clique em "Send" e analise como os dados são enviados na solicitação POST.
+
+### Atividade 4
+
+* Utilize uma solicitação GET ou POST anterior.
+* Após a execução, vá para a seção de cabeçalhos na resposta.
+* Analise detalhes como Content-Type e Content-Length para compreender a natureza da resposta.
+
+### Atividade 5
+
+* Crie uma nova solicitação GET no Postman.
+* Insira a URL do site do YouTube (www.youtube.com).
+* Clique em "Send" e analise a resposta HTML no painel de visualização, extraindo informações relevantes da estrutura HTML da página.
 ---
 
 ---
